@@ -1,0 +1,541 @@
+/* Set the base font family and background color for the entire document */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #444;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.footer-link {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #aaa;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: #444;
+}
+
+.sidebar-menu .menu-item {
+  display: block;
+  padding: 10px 20px;
+  color: #eee;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.sidebar-menu .menu-item:hover {
+  background: #555;
+}
+
+/* Animação suave para a barra lateral */
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Animação suave para fechar a barra lateral */
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Adicionando a animação suave ao abrir a barra lateral */
+.sidebar.open {
+  animation: slideIn 0.5s forwards;
+}
+
+/* Adicionando a animação suave ao fechar a barra lateral */
+.sidebar.close {
+  animation: slideOut 0.5s forwards;
+}
+.navbar {
+  
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.navbar.transparent {
+  opacity: 0; /* Torna a barra invisível */
+  transition: opacity 0.5s ease; /* Animação suave */
+  /* Exemplo de ocultação completa:
+  display: none;
+  */
+}
+
+
+/* Adicionando a animação suave ao mostrar o menu de navegação */
+.navbar-collapse.show {
+  animation: fadeIn 0.3s forwards;
+}
+
+/* Styling for the navbar brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+
+.card-container {
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for the navbar brand */
+.navbar-brand:hover {
+  color: #0056b3;
+}
+
+/* Styling for the search input */
+.search-input {
+  width: 300px;
+}
+
+/* Styling for the file card */
+.file-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+/* Hover effect for the file card */
+.file-card:hover {
+  transform: translateY(-5px);
+}
+
+.modal-header .close {
+  color: #000000 !important; /* Set color of close button to black */
+}
+
+/* Styling for modal content */
+.modal-content {
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for file tags */
+.file-tags span {
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+/* Alternate background color for file tags */
+.file-tags span:nth-child(2n) {
+  background-color: #28a745;
+}
+
+/* Alternate background color for file tags */
+.file-tags span:nth-child(3n) {
+  background-color: #dc3545;
+}
+
+/* Styling for the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
+.user-info, .bio, .post-category {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2, .bio h2, .post-category h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.user-info .user-name {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.user-info div p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.bio p {
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.post {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.post p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #999;
+  margin-top: 10px;
+}
+
+.post-meta span {
+  margin-right: 10px;
+}
+
+.post-category-bar {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-category-bar button {
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-category-bar button:hover {
+  background-color: #007bff;
+}
+
+/* Resetting default list styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for list items */
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.modal-content .modal-title {
+  color: #000000 !important;
+}
+
+/* Styling for anchor links */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Styling for tag text */
+.tag-text {
+  font-size: 0.5em;
+}
+
+/* Styling for tags */
+.tag {
+  background-color: #007bff;
+  color: #fff;
+  padding: 2px 5px;
+}
+
+/* Styling for cards */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-container {
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for cards */
+.card:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for icons */
+i {
+  margin-right: 5px;
+}
+
+/* Aligning icons vertically */
+.file-info i {
+  vertical-align: middle;
+}
+
+/* Styling for file info span */
+.file-info span {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+/* Styling for sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #292929;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* Styling for sidebar header */
+.sidebar-header {
+  background-color: #212121;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for sidebar menu */
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styling for menu items */
+.menu-item {
+  display: block;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+  background-color: #424242;
+}
+
+/* Styling for close button */
+.close-btn {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Styling for sidebar footer */
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling for footer links */
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Hover effect for footer links */
+.footer-link:hover {
+  color: #aaa;
+}
+
+/* Adjusting container padding for top spacing */
+
+
+/* Media query for adjusting sidebar on small screens */
+@media screen and (max-height: 780px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+  #first_cascade {
+    display: block; /* Make the expanded card visible */
+  }
+
+  .col-md-4 {
+    width: 100%; /* Full width on small screens */
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+  #weare {
+    display: flex;
+    flex-direction: column;
+}
+}
+
+/* Media query for adjusting file card height on smaller screens */
+
+.parallax-section {
+
+
+    height: auto; 
+    min-height: 100px;
+    padding: 30px;
+}
+
+article .container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.parallax {
+    background-image: url('../Images/Old/c10.png'); /* Replace with your image */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  /* Container for text and image box */
+  .content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #parallax-world-of-ugg .parallax-one {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url('../Images/Old/c10.png');
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  .section {
+    padding: 0 15px;
+  }
+  .section-text {
+    background: url("../Images/Old/c10.png") no-repeat
+      fixed center right / cover;
+    margin-top: 20vh;
+  }
+  .section-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(56, 36, 52, 0.5);
+  }
+  .section-text div {
+    position: relative;
+    max-width: 700px;
+    padding: 100px 0;
+    margin: 0 auto;
+  }
+  

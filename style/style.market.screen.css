@@ -1,0 +1,413 @@
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave ao zoom */
+}
+
+.tall-image {
+    width: 100%;          /* Faz a imagem preencher toda a largura do card */
+    height: 100%;         /* Faz a imagem preencher toda a altura do card */
+    object-fit: cover;    /* Faz a imagem cobrir completamente a área do card */
+    margin: 0;           /* Remove qualquer margem */
+    padding: 0;          /* Remove qualquer preenchimento */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+.carousel-item {
+    transition: transform 1s ease;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    transition: transform 1s ease, transform 1s ease-in-out; /* Adiciona transição ao zoom */
+}
+
+.carousel-item-next.carousel-item-left, .carousel-item-prev.carousel-item-right {
+    transform: scale(0.98); /* Zoom out para os itens fora da tela */
+}
+
+.carousel-item.active {
+    transform: scale(1.02); /* Zoom in no item ativo */
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+.parallax-section {
+    background-image: url("../Images/Themes/Heros/cyber_punk_8.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Center the text */
+    color: #fff;
+    font-size: 24px;
+}
+
+#container {
+    width: 600px;
+    margin: 50px auto;
+}
+
+.container12 {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#image-slider {
+    width: 100%;
+    position: relative;
+}
+
+#image1, #image2 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#slider-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.sidebar-header {
+    background-color: #212121;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+#slider-handle {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.slider-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+
+.container21 {
+    width: 80%;
+    margin: 400px auto;
+    text-align: center;
+}
+
+.slider {
+    width: 100%;
+}
+
+.active-image {
+    border: 2px solid #f00;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-text {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilos do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.modal-header {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+}
+
+.close-btn {
+    padding: 12px 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    scale: 75%;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+
+.card:hover .card-title {
+    color: #fff;
+}
+
+.card:hover .card-text {
+    color: #eee;
+    font-size: 98%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-img-top {
+    margin-top: 10px; /* Adiciona 10px de espaçamento no topo */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-body {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+    /*flex-direction: column; !* Organiza o conteúdo verticalmente *!*/
+    /*justify-content: space-between; !* Garante que o conteúdo fique distribuído, com o botão no final *!*/
+    /*min-height: 250px;*/
+}
+
+.btn-hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.search-hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.search-hover-shadow:hover {
+    box-shadow: 0 0 0 2px rgba(184, 188, 200, 0.75);
+}
+
+.btn-hover-shadow:hover {
+    box-shadow: 0 0 0 4px rgba(166, 173, 191, 0.75);
+}
+.btn-save:hover {
+    background-color: #155ab8;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #666;
+}
+
+.card-text {
+    color: #999;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary .fas {
+    margin-right: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover .fas {
+    transform: rotate(90deg);
+}
+
+.carousel-control-next-icon {
+    background-color: transparent; /* Remove o fundo */
+    border: none; /* Remove qualquer borda */
+    color: black; /* Define a cor do ícone como preto */
+    filter: none; /* Remove sombras ou efeitos */
+}
+
+.header {
+    background-color: #772828;
+    padding: 24px;
+    border-radius: 6px;
+    margin: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    transform: scale(1.0);
+    background-color: transparent;
+
+}
+.nav-item a.nav-link {
+    transition: background-color 0.1s, border-radius 0.1s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.nav-item a.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 16px; /* Bordas arredondadas no hover */
+
+}
+
+.tall-image {
+    width: 100%;          /* Faz a imagem preencher toda a largura do card */
+    height: 100%;         /* Faz a imagem preencher toda a altura do card */
+    object-fit: cover;    /* Faz a imagem cobrir completamente a área do card */
+    margin: 0;           /* Remove qualquer margem */
+    padding: 0;          /* Remove qualquer preenchimento */
+}
+  .rotate-icon {
+    transition: transform 0.3s ease; /* Smooth transition for the rotation */
+  }
+  
+  #button_first_card_test:hover .rotate-icon {
+    transform: rotate(180deg); /* Rotate the arrow 90 degrees on hover */
+  }
+  

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Reader with Stylish Design</title>
+  <style>
+    /* Estilo geral da página */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.6;
+    }
+
+    /* Área do título */
+    h1 {
+      font-size: 4.5rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    /* Área de input do Markdown */
+    textarea {
+      width: 100%;
+      max-width: 1200px;
+      height: 200px;
+      padding: 15px;
+      border: 1px solid #bdc3c7;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      background-color: #fff;
+      resize: none;
+      transition: border-color 0.3s;
+    }
+
+    textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    /* Botão de renderização */
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Área de saída renderizada */
+    #output {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      overflow-wrap: break-word;
+    }
+
+    /* Estilos específicos para o conteúdo renderizado */
+    h1 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 10px;
+      margin-top: 20px;
+      font-size: 50px;
+      transition: color 0.3s;
+    }
+
+    /* Estilos específicos para o conteúdo renderizado */
+    h2 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      font-size: 44px;
+
+      transition: color 0.3s;
+    }
+
+    /* Estilos específicos para o conteúdo renderizado */
+    h3 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      transition: color 0.3s;
+      font-size: 28px;
+    }
+    /* Estilos específicos para o conteúdo renderizado */
+    h4 {
+      color: #34495e;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      transition: color 0.3s;
+      font-size: 28px;
+    }
+
+
+
+    h1:hover, h2:hover, h3:hover {
+      color: #3498db;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: text-decoration 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      padding-bottom: 20px;
+    }
+
+    /* Estilo do card de código */
+    .code-card {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #858587;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      margin: 10px 0;
+      background-color: #f9f9f9;
+      border-radius: 2px;
+      padding: 10px;
+    }
+
+    pre {
+      background-color: #ececec;
+      color: #000000;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+<h1>Markdown Reader with Stylish Design</h1>
+<textarea id="markdown-input" rows="10" cols="50" placeholder="Enter your Markdown here..."></textarea>
+<br>
+<button onclick="renderMarkdown()">Render Markdown</button>
+
+<div id="output"></div>
+
+<script>
+  function renderMarkdown() {
+    const markdownText = document.getElementById("markdown-input").value;
+
+    // Aplica substituições para converter Markdown em HTML
+    const html = markdownText
+            .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1">') // Imagens ![alt](url)
+            .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')      // Links [texto](url)
+            .replace(/^#### (.*$)/gim, '<h4>$1</h4>')                      // Cabeçalhos ### título
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')                      // Cabeçalhos ### título
+            .replace(/^## (.*$)/gim, '<h2>$1</h2>')                       // Cabeçalhos ## título
+            .replace(/^# (.*$)/gim, '<h1>$1</h1>')                        // Cabeçalhos # título
+            .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')           // Negrito **texto**
+            .replace(/\*(.*?)\*/gim, '<em>$1</em>')                       // Itálico *texto*
+            .replace(/```(.*?)\n([\s\S]*?)```/gim, '<pre>$2</pre>')      // Código em bloco
+            .replace(/`(.*?)`/gim, '<div class="code-card"><code>$1</code></div>') // Código em linha `código`
+            .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')       // Citações > texto
+            .replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>')              // Listas não ordenadas - item
+            .replace(/^\d+\.(.*$)/gim, '<ol><li>$1</li></ol>')            // Listas ordenadas 1. item
+            .replace(/<\/ul>\s*<ul>/gim, '')                              // Corrige a duplicação de <ul>
+            .replace(/<\/ol>\s*<ol>/gim, '')                              // Corrige a duplicação de <ol>
+            .replace(/\n/gim, '<br>');                                    // Quebras de linha
+
+    // Exibe o HTML gerado
+    document.getElementById("output").innerHTML = html;
+  }
+</script>
+</body>
+</html>

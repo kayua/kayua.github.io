@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OctoNerd IA</title>
+
+  <link href="style/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style/Style.css">
+  <link rel="stylesheet" href="style/style.main.screen.css">
+  <link rel="stylesheet" href="style/modal.css">
+
+</head>
+
+<body>
+<audio id="meuAudio" src="Media/Podcast_AI.mp3"></audio>
+<div id="nav_bar"></div>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+  </ol>
+
+  <div class="carousel-inner" style="background-color: rgba(0,0,0,0.88); ">
+
+    <div class="carousel-item active">
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+        <img src="Images/Themes/Heros/cyber_punk_4.png" style="width: 100%; object-fit: cover;" class="d-block" alt="...">
+
+      </div>
+
+      <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.6); padding: 15px; border-radius: 10px; max-width: 500px; margin: auto;">
+
+        <h5>Aprenda IA generativa na prática!</h5>
+
+        <p>Evolua constantemente suas habilidades abraçando novas tecnologias.</p>
+
+        <div style="text-align: center; margin-top: 10px; color: #666;">
+
+          <small>*Imagem gerada por IA</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+        <img src="Images/Themes/Heros/cyber_punk_2.png" style="width: 100%; height: 100%; object-fit: cover;" class="d-block" alt="...">
+
+      </div>
+
+      <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.6); padding: 15px; border-radius: 10px; max-width: 500px; margin: auto;">
+
+        <h5>Desenvolvas seus prorios modelos!</h5>
+        <p>Explore o universo de possibilidades da Inteligência Artificial.</p>
+
+        <div style="text-align: center; margin-top: 10px; color: #666;">
+
+          <small>*Imagem gerada por IA</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+        <img src="Images/Themes/Heros/cyber_punk_3.png" style="width: 100%; height: 100%; object-fit: cover;" class="d-block" alt="...">
+
+      </div>
+
+      <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.6); padding: 15px; border-radius: 10px; max-width: 500px; margin: auto;">
+
+        <h5>Aprenda IA generativa na prática!</h5>
+
+        <p>Expanda o potencial da sua IA gerando e aplicando dados gerados por IA.</p>
+
+        <div style="text-align: center; margin-top: 10px; color: #666;">
+
+          <small>*Imagem gerada por IA</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width: 5%;">
+
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+
+  </a>
+
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="width: 5%;">
+
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+
+  </a>
+
+</div>
+
+
+<br>
+
+
+<div class="container mt-5">
+
+  <h2 class="text-center section-title mb-5">Assuntos em Destaque</h2>
+
+  <hr>
+  <h3></h3>
+
+  <div class="row">
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+
+        <img src="Images/Themes/b.jpg" class="card-img-top" alt="...">
+
+
+        <div class="card-overlay"></div>
+
+
+        <div class="card-body">
+
+
+          <h5 class="card-title">Aprendizado de Máquina</h5>
+
+
+          <p class="card-text">Explore os fundamentos e técnicas do aprendizado de máquina. Descubra o poder da IA.</p>
+
+
+          <div class="text-right">
+            <a id= "button_first_card" class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+        <img src="https://www.popsci.com/uploads/2023/09/07/robot_with_bob_ross.jpg?auto=webp&width=1440&height=807.36" class="card-img-top" style="margin-top: -2px;" alt="...">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-body">
+
+          <h5 class="card-title">Redes Neurais</h5>
+
+          <p class="card-text">Descubra como as redes neurais são usadas em aplicações de aprendizado de máquina.</p>
+
+          <div class="text-right">
+            <a id= "button_second_card" class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+        <img src="Images/Themes/a.jpeg" class="card-img-top img-fluid" alt="..." style="margin-top: -2px;">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-body">
+
+          <h5 class="card-title">Processamento de Linguagem Natural</h5>
+
+          <p class="card-text">Conheça como o processamento de linguagem natural é aplicado hoje.</p>
+
+          <div class="text-right">
+
+            <a id= "button_third_card" class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<h2 class="text-center section-title mb-5"><strong>IA Generativa:</strong> Infinitas possibilidades <i class="fas fa-robot"></i></h2>
+
+<div class="container">
+
+  <hr style="border-color: #212121">
+
+</div>
+
+
+<div class="parallax-section" style=" overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+  <div class="container mt-4 mb-3" style="display: flex; justify-content: center; align-items: center; margin-top: 14px">
+
+    <div class="row">
+
+      <div class="col-md-6 mb-12 mt-3 d-flex justify-content-center">
+
+        <div class="card" style="max-width: 90%; max-height: 87.5%; zoom: 1.5; display: flex; justify-content: center;">
+
+          <img src="https://img.freepik.com/free-photo/mermaid-ocean_71767-129.jpg" class="card-img-top" alt="Malware Image" style="width: 100%; height: auto; object-fit: contain;">
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 align-self-center d-flex flex-column justify-content-between">
+
+        <p class="text-center" style="font-size: 20.4px;">A inteligência artificial generativa cria novos conteúdos, como imagens, textos e músicas, a partir de dados existentes. Por meio de redes neurais e modelos de linguagem, essa tecnologia aprende padrões e gera resultados semelhantes. Com aplicações em arte e automação de textos, levanta também questões éticas sobre originalidade e autoria.</p>
+
+        <div class="text-center mt-auto">
+
+          <br>
+
+          <a href="./whatis.html" class="btn btn-secondary btn-hover-shadow" style="border-radius: 24px; background-color: rgba(255,255,255,0);
+            border: 2px solid #ffffff; color: #ffffff;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<h2 class="text-center section-title mb-5"><i class="fas fa-play"></i><strong> Ouça o Podcasts:</strong> 100% feito por IA</h2>
+
+<div class="container">
+
+  <hr style="border-color: #212121">
+
+</div>
+
+
+<div class="container mt-5" style="display: flex; justify-content: center; align-items: center;">
+
+  <div class="row">
+
+    <div class="col-md-6 align-self-center d-flex flex-column justify-content-between">
+
+      <p class="text-center" style="font-size: 20.4px;">Neste podcast, nossos dois personagens, Mariana e Carlos, totalmente criados por inteligência artificial, discutem o impacto da IA no mercado de trabalho e os riscos da automação, trazendo a perspectiva de especialistas sobre o tema.</p>
+
+      <div class="text-center mt-auto">
+
+        <br>
+
+        <a id='playButton' class="btn btn-secondary btn-hover-shadow" style="border-radius: 24px; margin-bottom: 24px; background-color: #272727;
+            border: 2px solid #272727; color: white;"><i class="fas fa-play"></i> Podcast</a>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-md-6 mb-12 d-flex justify-content-center">
+
+      <div class="card" style="max-width: 100%; max-height: 100%; display: flex; justify-content: center;">
+
+        <a href="https://www.cognilytica.com/top-10-reasons-why-ai-projects-fail/"> <img src="Images/Themes/podcast.jpg" class="card-img-top" alt="Malware Image" style="width: 100%; height: auto; object-fit: contain;"></a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<h2 class="text-center section-title mb-5">Aprenda tudo sobre ia com OctoNerd <i class="fab fa-github"></i></h2>
+
+<div class="container">
+
+  <hr style="border-color: #212121">
+
+</div>
+
+
+<div class="parallax-section" style=" max-height: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+  <div class="container mt-5 mb-5" style="display: flex; justify-content: center; align-items: center;">
+
+    <div class="row">
+
+      <div class="col-md-6 mb-12 d-flex justify-content-center">
+
+        <div class="card" style="max-width: 100%; max-height: 100%;  width:100%; height:120%; display: flex; justify-content: center;">
+
+          <img src="Images/Themes/MyPage.png" class="card-img-top" alt="Malware Image" style="width: 100%; height: auto; object-fit: contain;">
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 align-self-center d-flex flex-column justify-content-between" style="margin-top: 14px">
+
+        <p class="text-center" style="font-size: 20.4px;">Aprenda tudo sobre aprendizado de máquinas e IA Generativa com o OctoNerd, seu tutor nessa jornada. Ele fornecerá explicações detalhadas, dicas de leitura e exercícios práticos para consolidar seu conhecimento. Com materiais selecionados e desafios aplicados, você terá uma experiência de aprendizado interativa e eficiente.</p>
+
+        <div class="text-center mt-auto">
+
+          <br>
+
+          <a href="./datalab.html" class="btn btn-secondary btn-hover-shadow" style="border-radius: 24px; background-color: rgba(255,255,255,0);
+            border: 2px solid #ffffff; color: #ffffff;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<h2 class="text-center section-title mb-5" id="mot"><i class="fas fa-rocket"></i> Acelere seu processo de aprendizado</h2>
+
+
+<div class="container">
+
+  <hr style="border-color: #212121">
+
+</div>
+
+
+<div class="container mt-4" style="display: flex; justify-content: center; align-items: center;">
+
+  <div class="row">
+
+    <div class="col-md-6 align-self-center d-flex flex-column justify-content-between">
+
+      <p class="text-center" style="font-size: 20.4px;">Aproveite os recursos interativos do laboratório, que incluem tutoriais detalhados, exemplos de código, vídeos explicativos e exercícios práticos. Esses materiais foram desenvolvidos para tornar seu aprendizado mais dinâmico e eficiente, permitindo que você aplique o que aprendeu de forma prática e acelerando seu progresso. </p>
+
+      <div class="text-center mt-auto">
+
+        <br>
+
+        <a href="./tec.html" class="btn btn-secondary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; margin-bottom: 24px;
+            border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6 mb-12 d-flex justify-content-center">
+
+      <div class="card" style="max-width: 100%; max-height: 100%; display: flex; justify-content: center;">
+
+        <img src="Images/Themes/tutorial.png" class="card-img-top" alt="Malware Image" style="width: 100%; height: auto; object-fit: contain;">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<br>
+<br>
+
+<div class="row center-content" style="background-color: #f1f1f1;margin-top: 2%">
+
+  <div class="container mt-8" id="#news" style="margin-top: 2%">
+
+    <h2 class="text-center my-4 mt-4 section-title" id="news">Trabalhos publicados <i class="fas fa-robot"></i></h2>
+
+    <br>
+
+    <hr style="border-color: #212121">
+
+    <div class="row" id="premiacoes-list">
+
+    </div>
+
+    <div class="text-center mt-auto">
+
+      <br>
+
+      <a href="./news.html" class="btn btn-secondary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; margin-bottom: 24px;
+            border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Veja todas as novidades</a>
+
+    </div>
+
+  </div>
+
+  <br>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="Scripts/Index/Index.js"></script>
+<script src="Scripts/Footer.js"></script>
+<script src="Scripts/NavBar.js"></script>
+<script src="Scripts/News/News.js"></script>
+
+</body>
+</html>

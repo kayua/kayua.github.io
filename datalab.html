@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OctoNerd IA</title>
+  <link href="style/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style/Style.css">
+  <link rel="stylesheet" href="style/style.main.screen.css">
+  <link rel="stylesheet" href="style/modal.css">
+  <link rel="stylesheet" href="style/style.datasets.screen.css">
+
+</head>
+
+<body>
+
+<div id="nav_bar"></div>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" style="background-color: rgba(0,0,0,0.88); position: relative;">
+
+    <div class="carousel-item active">
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+        <img src="Images/Themes/Heros/cyber_punk_3.png" style="width: 100%; object-fit: cover; filter: brightness(0.60);" class="d-block" alt="...">
+
+      </div>
+
+      <div style="position: absolute; top: 50%; right: 10%; transform: translateY(-50%);">
+
+        <div style="display: flex; align-items: center; justify-content: flex-end;">
+
+          <div style="text-align: right;">
+
+            <h1 style="font-size: 5vw; color: white; margin-right: 10px; margin-left: 5px">Datasets Selecionados</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+
+
+<div class="container mt-5">
+
+  <h2 class="text-center section-title mb-5">Nossos Datasets</h2>
+
+  <hr>
+  <h3></h3>
+
+  <div class="row">
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+        <img src="Images/Themes/y.jpeg" class="card-img-top" style="margin-top: -2px;" alt="...">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-body">
+
+          <h5 class="card-title">Malware Permission</h5>
+
+          <p class="card-text">Descubra como as redes neurais são usadas em aplicações de aprendizado de máquina.</p>
+
+          <div class="text-right">
+            <a id= "button_first_card" href="https://github.com/MalwareDataLab/Datasets" class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+        <img src="Images/Themes/p.jpeg" class="card-img-top" style="margin-top: -2px;" alt="...">
+
+        <div class="card-overlay"></div>
+
+        <div class="card-body">
+
+          <h5 class="card-title">Torrent Traces</h5>
+
+          <p class="card-text">Descubra como as redes neurais são usadas em aplicações de aprendizado de máquina.</p>
+
+          <div class="text-right">
+            <a id= "button_second_card" href="https://github.com/kayua/Correct_Torrent_Trace-Machine_Learning" class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <div class="card mb-4">
+
+        <img src="Images/Themes/l.jpeg" class="card-img-top img-fluid" alt="..." style="margin-top: -2px;">
+        <div class="card-overlay"></div>
+
+        <div class="card-body">
+
+          <h5 class="card-title">Dataset Mosquitos Aedes Aegypti</h5>
+          <p class="card-text">Conheça como o processamento de linguagem natural é aplicado hoje.</p>
+
+          <div class="text-right">
+
+            <a id= "button_third_card" href="https://www.inf.ufrgs.br/aedes-vigilance/"
+               class="btn btn-primary btn-hover-shadow" style="border-radius: 24px; background-color: #272727; border: 2px solid #272727; color: white;"><i class="fas fa-arrow-right"></i> Saiba Mais</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="row center-content" style="background-color: #f1f1f1;margin-top: 2%">
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2 class="text-center my-4 section-title">Datasets para geração de imagens</h2>
+
+  <br>
+  <br>
+  <div class="container mt-4">
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <div id="column1"></div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div id="column2"></div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div id="column3"></div>
+
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="Scripts/Footer.js"></script>
+<script src="Scripts/NavBar.js"></script>
+<script src="Scripts/Dataset/Index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tall-image {
+    width: 100%;          /* Faz a imagem preencher toda a largura do card */
+    height: 100%;         /* Faz a imagem preencher toda a altura do card */
+    object-fit: cover;    /* Faz a imagem cobrir completamente a área do card */
+    margin: 0;           /* Remove qualquer margem */
+    padding: 0;          /* Remove qualquer preenchimento */
+}

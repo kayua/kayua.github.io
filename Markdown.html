@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OctoNerd IA</title>
+  <link href="style/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style/Style.css">
+  <link rel="stylesheet" href="style/style.main.screen.css">
+  <link rel="stylesheet" href="style/modal.css">
+  <link rel="stylesheet" href="style/style.datalab.screen.css">
+  <style>
+
+    h1 {
+      font-size: 4.5rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    textarea {
+      width: 100%;
+      max-width: 1200px;
+      height: 200px;
+      padding: 15px;
+      border: 1px solid #bdc3c7;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      background-color: #fff;
+      resize: none;
+      transition: border-color 0.3s;
+    }
+    textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #output {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      overflow-wrap: break-word;
+    }
+    h1 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 10px;
+      margin-top: 20px;
+      font-size: 50px;
+      transition: color 0.3s;
+    }
+    h2 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      font-size: 44px;
+
+      transition: color 0.3s;
+    }
+    h3 {
+      color: #34495e;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      transition: color 0.3s;
+      font-size: 28px;
+    }
+    h4 {
+      color: #34495e;
+      padding-bottom: 5px;
+      margin-top: 10px;
+      transition: color 0.3s;
+      font-size: 28px;
+    }
+    h1:hover, h2:hover, h3:hover {
+      color: #3498db;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+      transition: text-decoration 0.3s;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ol {
+      margin-left: 20px;
+      padding-bottom: 20px;
+    }
+    .code-card {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #858587;
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      margin: 10px 0;
+      background-color: #f9f9f9;
+      border-radius: 2px;
+      padding: 10px;
+    }
+    pre {
+      background-color: #ececec;
+      color: #000000;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div id="nav_bar"></div>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" style="background-color: rgba(0,0,0,0.88); position: relative;">
+
+    <div class="carousel-item active">
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+
+        <img src="Images/Themes/Heros/cyber_punk_3.png" style="width: 100%; object-fit: cover; filter: brightness(0.60);" class="d-block" alt="...">
+
+      </div>
+
+      <div style="position: absolute; top: 50%; right: 10%; transform: translateY(-50%);">
+
+        <div style="display: flex; align-items: center; justify-content: flex-end;">
+
+          <div style="text-align: right;">
+
+            <h1 style="font-size: 5vw; color: white; margin-right: 10px; margin-left: 5px">Aprendendo na prática</h1>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container mt-4">
+
+  <h2 class="text-center section-title mb-5" style="margin-top: 42px">O que é o Malware DataLab?</h2>
+  <hr style="border-color: #212121">
+
+  <div class="container mt-5" style="display: flex; justify-content: center; align-items: center;">
+
+    <div class="row">
+
+      <div class="col-md-12 align-self-center d-flex flex-column justify-content-between">
+
+        <p class="text-center" style="font-size: 22.0px;">Malware Data Lab é uma Plataforma de ensino, pesquisa e extensão, que tem como objetivo  ajudar a resolver a resolver o problema cronico de 3.9  bilhões de usuários Android, através da capacitação de Hackers do Bem nas novas tecnologias avançadas de geração de dados sintéticos</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div id="output"></div>
+</div>
+<script>
+  async function fetchMarkdown() {
+    const url = "Readme/1.md";
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const markdownText = await response.text();
+      renderMarkdown(markdownText);
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      document.getElementById("output").innerHTML = '<p style="color: red;">Failed to fetch Markdown file. Please check the URL.</p>';
+    }
+  }
+
+  function renderMarkdown(markdownText) {
+
+    const html = markdownText
+            .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1">')
+            .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
+            .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+            .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+            .replace(/```(.*?)\n([\s\S]*?)```/gim, '<pre>$2</pre>')
+            .replace(/`(.*?)`/gim, '<div class="code-card"><code>$1</code></div>')
+            .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+            .replace(/^\- (.*$)/gim, '<ul><li>$1</li></ul>')
+            .replace(/^\d+\.(.*$)/gim, '<ol><li>$1</li></ol>')
+            .replace(/<\/ul>\s*<ul>/gim, '')
+            .replace(/<\/ol>\s*<ol>/gim, '')
+            .replace(/\n/gim, '<br>');
+
+    document.getElementById("output").innerHTML = html;
+  }
+  fetchMarkdown();
+</script>
+<div id="footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="Scripts/Footer.js"></script>
+<script src="Scripts/NavBar.js"></script>
+<script src="Scripts/Dataset/Index.js"></script>
+
+</body>
+</html>
