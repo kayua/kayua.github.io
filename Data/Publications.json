@@ -1,0 +1,44 @@
+[
+  {
+    "index": 2,
+    "title": "Trabalho publicado nos Anais do SBSeg 2024",
+    "imageUrl": "Images/Publications/main_track_icon.png",
+    "description": "Artigo \"“Geração de dados sintéticos tabulares para detecção de Malwares Android: um estudo de caso\" aceito para apresentação no SBSeg 2024.",
+    "url": "https://sol.sbc.org.br/index.php/sbseg/article/view/30072"
+  },
+  {
+    "index": 3,
+    "title": "Trabalho publicado nos Anais Estendidos (Salão de ferramentas) do SBSeg 2024",
+    "imageUrl": "Images/Publications/sbseg_workshop_icon.png",
+    "description": "Artigo \"MalSynGen: redes neurais artificiais na geração de dados tabulares sintéticos para detecção de malware\"  apresentado no VIII Salão de Ferramentas do SBSeg",
+    "url": "https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/30126"
+  },
+  {
+    "index": 8,
+    "title": "Artigo publicado nos Anais Estendidos do SBSeg 2023",
+    "imageUrl": "Images/Publications/sbseg_icon.png",
+    "description": " Artigo \"DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos\" publicado no SBSeg 2023.",
+    "url": "https://sol.sbc.org.br/index.php/sbseg_estendido/article/view/27273"
+  },
+  {
+    "index":9,
+    "title": "Artigo publicado no periódico Biomedical Signal Processing and Control",
+    "imageUrl": "Images/Publications/biomedical_icon.png",
+    "description": "Artigo \"Acoustic identification of ae. aegypti mosquitoes using smartphone apps and residual convolutional neural networks\" publicado na revista BSPC.",
+    "url": "https://www.sciencedirect.com/science/article/pii/S1746809424004002"
+  },
+  {
+    "index": 10,
+    "title": "Trabalho publicado nos periódico Journal of Network and Systems Management ",
+    "imageUrl": "Images/Publications/jnsm_icon.png",
+    "description": "Artigo \"Regenerating Networked Systems’ Monitoring Traces Using Neural Networks\" publicado na revista Journal of Network and Systems Management.",
+    "url": "https://link.springer.com/article/10.1007/s10922-023-09790-9"
+  },
+  {
+    "index": 11,
+    "title": "Artigo publicado nos Anais do IEEE/IFIP Network Operations and Management Symposium",
+    "imageUrl": "Images/Publications/noms_icon.png",
+    "description": " Artigo \"DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos\" publicado no SBSeg 2023.",
+    "url": "https://ieeexplore.ieee.org/abstract/document/9789824"
+  }
+]
