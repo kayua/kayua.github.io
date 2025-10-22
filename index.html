@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayuã Oleques Paim - Currículo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #1a1a1a;
+            --accent-color: #333333;
+            --light-bg: #ffffff;
+            --light-card: #fafafa;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-tertiary: #999999;
+            --border-color: #e5e5e5;
+            --hover-bg: #f5f5f5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #ffffff;
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+            animation: pulse 20s ease-in-out infinite;
+        }
+
+        .background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 60px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            padding: 20px 60px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-text .subtitle {
+            font-size: 26px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 500;
+            animation: slideInLeft 1.2s ease-out;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            animation: slideInLeft 1.4s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            animation: slideInLeft 1.6s ease-out;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-card {
+            background: var(--light-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .profile-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: 900;
+            color: white;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .profile-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.3;
+        }
+
+        .profile-info {
+            text-align: center;
+        }
+
+        .profile-info h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .profile-info .role {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: white;
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 22px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 80px;
+            color: var(--primary-color);
+            letter-spacing: -2px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--primary-color);
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover::before {
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
+
+        .card h3 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .card .period {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card .institution {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Publications */
+        .publication-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .publication-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--border-color);
+            transition: all 0.4s ease;
+        }
+
+        .publication-item:hover {
+            border-color: var(--primary-color);
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-item:hover::before {
+            background: var(--primary-color);
+        }
+
+        .publication-item h4 {
+            font-size: 19px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .publication-item .authors {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .publication-item .venue {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            background: var(--light-card);
+            padding: 4px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item .skill-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .skill-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-card h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            word-break: break-word;
+            font-weight: 500;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--light-card);
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+
+            nav {
+                padding: 20px 25px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-text .subtitle {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Special section background */
+        #publications {
+            background: linear-gradient(180deg, white 0%, var(--light-card) 100%);
+        }
+
+        /* Modern scroll bar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Selection color */
+        ::selection {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Subtle animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .profile-avatar {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Hover effects for interactive elements */
+        button, .btn, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Smooth page transitions */
+        body {
+            animation: fadeInPage 0.5s ease-in;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Additional card styling */
+        .card strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Modern badge style for periods */
+        .card .period::before {
+            content: '●';
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">KOP</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#education">Formação</a></li>
+                <li><a href="#awards">Prêmios</a></li>
+                <li><a href="#research">Pesquisa</a></li>
+                <li><a href="#publications">Publicações</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Kayuã Oleques Paim</h1>
+                    <p class="subtitle">Bolsista de Doutorado CNPq</p>
+                    <p>Doutorando em Ciência da Computação pela UFRGS, com foco em Inteligência Artificial Simbólica, Representação do Conhecimento e Redes Neurais Profundas. Trabalhando com Sound Recognition, Data Imputation, Synthetic Data Generation, Data Augmentation e Text-to-Image/Video.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">Entre em Contato</a>
+                        <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" class="btn btn-secondary">Lattes CV</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="profile-card">
+                        <div class="profile-content">
+                            <div class="profile-avatar">KP</div>
+                            <div class="profile-info">
+                                <h3>Kayuã Paim</h3>
+                                <p class="role">PhD Student | AI Researcher</p>
+                                <div class="social-links">
+                                    <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" title="Lattes">📄</a>
+                                    <a href="https://orcid.org/0000-0002-3394-795X" target="_blank" title="ORCID">🔬</a>
+                                    <a href="mailto:kayua@inf.ufrgs.br" title="Email">✉️</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Formação Acadêmica</h2>
+            <div class="cards-grid">
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <div>
+                            <h3>Doutorado</h3>
+                            <p class="period">2023 - Atual</p>
+                        </div>
+                    </div>
+                    <p class="institution">Universidade Federal do Rio Grande do Sul (UFRGS)</p>
+                    <p>PPGC - Programa de Pós Graduação em Computação</p>
+                    <p><strong>Orientador:</strong> Prof. Weverton da Costa Cordeiro</p>
+                    <p><strong>Bolsista:</strong> CNPq/CAPES</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <h3>Mestrado Profissional</h3>
+                            <p class="period">2022 - 2023</p>
+                        </div>
+                    </div>
+                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
+                    <p>Engenharia de Software</p>
+                    <p><strong>Título:</strong> Improving the Identification of Aedes aegypti Mosquitoes using Audio Recordings and Convolutional Neural Networks</p>
+                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">💻</div>
+                        <div>
+                            <h3>Graduação</h3>
+                            <p class="period">2018 - 2022</p>
+                        </div>
+                    </div>
+                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
+                    <p>Ciência da Computação</p>
+                    <p><strong>TCC:</strong> Aprendizagem Profunda para Corrigir Datasets de Sistemas Distribuídos de Larga Escala</p>
+                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" style="background: linear-gradient(180deg, var(--light-card) 0%, white 100%);">
+        <div class="container">
+            <h2 class="section-title fade-in">Prêmios e Reconhecimentos</h2>
+            <div class="cards-grid">
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🏆</div>
+                        <div>
+                            <h3>Melhor Ferramenta</h3>
+                            <p class="period">2025</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>Melhor Ferramenta do Salão de Ferramentas do XXV Simpósio Brasileiro de Cibersegurança</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🐍</div>
+                        <div>
+                            <h3>Google BugHunter Awards</h3>
+                            <p class="period">2025</p>
+                        </div>
+                    </div>
+                    <p class="institution">Google</p>
+                    <p>Snake - Submit a valid report in the year of the Snake</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">⭐</div>
+                        <div>
+                            <h3>Google Award</h3>
+                            <p class="period">2025</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>XXV Simpósio Brasileiro de Cibersegurança</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div>
+                            <h3>Artefatos Destaque</h3>
+                            <p class="period">2025</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>SBSEG 2025</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🥈</div>
+                        <div>
+                            <h3>Menção Honrosa</h3>
+                            <p class="period">2024</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>Artigo Curto - SBSEG 2024</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">💎</div>
+                        <div>
+                            <h3>Artefato Destaque</h3>
+                            <p class="period">2024</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>SBSEG 2024</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🥈</div>
+                        <div>
+                            <h3>2º Melhor Artigo</h3>
+                            <p class="period">2023</p>
+                        </div>
+                    </div>
+                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p>WRSeg 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title fade-in">Áreas de Pesquisa</h2>
+            <div class="skills-grid">
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🤖</div>
+                    <h4>Inteligência Artificial Simbólica</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🧠</div>
+                    <h4>Redes Neurais Profundas</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🎵</div>
+                    <h4>Sound Recognition</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">📊</div>
+                    <h4>Data Imputation</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🔄</div>
+                    <h4>Synthetic Data Generation</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🎨</div>
+                    <h4>Text-to-Image/Video</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">🔒</div>
+                    <h4>Cibersegurança</h4>
+                </div>
+                <div class="skill-item fade-in">
+                    <div class="skill-icon">📱</div>
+                    <h4>Malware Detection</h4>
+                </div>
+            </div>
+
+            <h3 class="section-title fade-in" style="font-size: 36px; margin-top: 80px;">Projetos de Pesquisa</h3>
+            
+            <div class="card fade-in" style="margin-bottom: 30px;">
+                <div class="card-header">
+                    <div class="card-icon">🔬</div>
+                    <div>
+                        <h3>LLMs e SLMs Aplicados à Cibersegurança</h3>
+                        <p class="period">2024 - Atual</p>
+                    </div>
+                </div>
+                <p>Exploração do potencial dos modelos de linguagem em larga e pequena escala em atividades como identificação de ameaças emergentes, análise preditiva de incidentes, auxílio em resposta a incidentes e criação de diretrizes automatizadas de mitigação.</p>
+            </div>
+
+            <div class="card fade-in">
+                <div class="card-header">
+                    <div class="card-icon">🦟</div>
+                    <div>
+                        <h3>GT - Malware DataLab</h3>
+                        <p class="period">2023 - Atual</p>
+                    </div>
+                </div>
+                <p>Serviço de Execução e Avaliação de Redes Neurais Artificiais para Geração de Dados de Malware. Desenvolvimento de estratégias para enriquecer conjuntos de dados de malwares Android usando técnicas avançadas como GANs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title fade-in">Produção Científica</h2>
+            
+            <h3 class="section-title fade-in" style="font-size: 40px; margin-bottom: 50px;">Artigos em Periódicos</h3>
+            
+            <div class="publication-item fade-in">
+                <h4>Regenerating Networked Systems' Monitoring Traces Using Neural Networks</h4>
+                <p class="authors">PAIM, KAYUÃ OLEQUES; QUINCOZES, VAGNER ERENO; KREUTZ, DIEGO; MANSILHA, RODRIGO BRANDÃO; CORDEIRO, WEVERTON</p>
+                <p class="venue">Journal of Network and Systems Management, v. 32, p. 16, 2024 | Citações: 1</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Acoustic identification of Ae. aegypti mosquitoes using smartphone apps and residual convolutional neural networks</h4>
+                <p class="authors">PAIM, K. O.; ROHWEDER, RICARDO; RECAMONDE-MENDOZA, MARIANA; MANSILHA, R.; CORDEIRO, WEVERTON</p>
+                <p class="venue">Biomedical Signal Processing and Control, v. 95, p. 106342, 2024 | Citações: 2</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Revisiting the coupon collector's problem to unveil users' online sessions in networked systems</h4>
+                <p class="authors">CORDEIRO, WEVERTON; GASPARY, LUCIANO; BELTRAN, RAFAEL; PAIM, KAYUÃ; MANSILHA, RODRIGO</p>
+                <p class="venue">Peer-to-Peer Networking and Applications, v. 1, p. 1, 2020 | Citações: 2</p>
+            </div>
+
+            <h3 class="section-title fade-in" style="font-size: 40px; margin-top: 100px; margin-bottom: 50px;">Trabalhos em Congressos</h3>
+            
+            <div class="publication-item fade-in">
+                <h4>Acoustic Identification of Aedes aegypti: Experimental Assessment of Different Machine Learning Techniques</h4>
+                <p class="authors">PAIM, K. O.; SILVA, T. M. D.; DILLY, J.; TAVARES, A. R.; CUNHA, M. P.; SILVA, O. S.; RECAMONDE-MENDOZA, M.; MANSILHA, R.; CORDEIRO, W.</p>
+                <p class="venue">SEMISH 2025 - Seminário Integrado de Software e de Hardware, Maceió-AL</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Exploiting Latent Space Discontinuities for Building Universal Jailbreaks and Data Extraction Attacks: A New Approach</h4>
+                <p class="authors">PAIM, K. O.; KREUTZ, D. L; FRANCO, M. F.; MANSILHA, RODRIGO; CORDEIRO, W.</p>
+                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Além da Similaridade: Uma Super-Métrica Generalizável para Avaliação de Fidelidade em Dados Sintéticos de Malware</h4>
+                <p class="authors">GOMES, A. L.; DINIZ, A. G.; KREUTZ, DIEGO; PAIM, K. O.; MANSILHA, RODRIGO; FONSECA, C. N.</p>
+                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>MalDataGen: A Modular Framework for Synthetic Tabular Data Generation in Malware Detection</h4>
+                <p class="authors">PAIM, K. O.; DINIZ, A. G.; KREUTZ, D. L; CORDEIRO, W.; BRANDAO, R.</p>
+                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - Salão de Ferramentas, Foz do Iguaçu - PR</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Geração de dados sintéticos tabulares para detecção de malware Android: um estudo de caso</h4>
+                <p class="authors">DINIZ, A. G.; PAIM, KAYUÃ OLEQUES; BRANGANCA, H.; BRANDAO, R.; KREUTZ, D. L</p>
+                <p class="venue">XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais, São José dos Campos, 2024</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>MosqMon: um sistema distribuído para captura de faixas de áudio para treinamento de RNAs detectoras de mosquito Ae. aegypti</h4>
+                <p class="authors">RODRIGUES, Y. F.; RODRIGUES, R. N.; PAIM, K. O.; Kreutz, Diego; CORDEIRO, W.; BRANDAO, R.</p>
+                <p class="venue">XXI Escola Regional de Redes de Computadores (ERRC), Porto Alegre, 2024</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos</h4>
+                <p class="authors">FERNANDES, K. C.; PAIM, K. O.; BRANDAO, R.; KREUTZ, D. L</p>
+                <p class="venue">Salão de Ferramentas do SBSeg 2023, Juiz de Fora</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>AutoDroid: disponibilizando a ferramenta DroidAugmentor como serviço</h4>
+                <p class="authors">LAVIOLA, L. F.; PAIM, K. O.; KREUTZ, D. L; BRANDAO, R.</p>
+                <p class="venue">7º Workshop Regional de Segurança da Informação e de Sistemas Computacionais, Porto Alegre, 2023</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Fix Me If You Can: Using Neural Networks to Regenerate Networked Systems' Monitoring Traces</h4>
+                <p class="authors">PAIM, KAYUA O.; QUINCOZES, VAGNER E.; KREUTZ, DIEGO; MANSILHA, RODRIGO B.; CORDEIRO, WEVERTON</p>
+                <p class="venue">NOMS 2022 - IEEE/IFIP Network Operations and Management Symposium, Budapest</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Orquestrando Avaliações Experimentais com ICN-Stage</h4>
+                <p class="authors">BELTRAN, R. D.; PAIM, KAYUÃ; KREUTZ, D. L; BRANDAO, R.; CORDEIRO, WEVERTON</p>
+                <p class="venue">XIII Workshop de Pesquisa Experimental da Internet do Futuro (WPEIF 2022), Fortaleza, CE</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>FWNL: Um Sistema de Processamento de Linguagem Natural para Configuração de Múltiplos Firewalls</h4>
+                <p class="authors">GOULART, J. A. S.; FAGUNDES JUNIOR, W. L. M.; PAIM, KAYUA O.; LUNARDI, G. M.; KREUTZ, D. L; MANSILHA, RODRIGO</p>
+                <p class="venue">VI Salão de Ferramentas - SBSeg 2022, Santa Maria</p>
+            </div>
+
+            <div class="publication-item fade-in">
+                <h4>Usando Redes Neurais para Reconstruir Traços de Sessões de Usuários de Sistemas de Larga Escala</h4>
+                <p class="authors">PAIM, K. O.; BELTRAN, R. D.; BRANDAO, R.; CORDEIRO, WEVERTON</p>
+                <p class="venue">XXXIX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC), Uberlândia/MG, 2021</p>
+            </div>
+
+            <h3 class="section-title fade-in" style="font-size: 40px; margin-top: 100px;">Inovação & Patentes</h3>
+
+            <div class="cards-grid">
+                <div class="card fade-in">
+                    <div class="card-icon">💡</div>
+                    <h3>DroidAugmentor</h3>
+                    <p class="period">Registro: BR512025000550-4 (2024)</p>
+                    <p>Ferramenta de Treinamento e Avaliação de cGANs para Geração de Dados Sintéticos para Detecção de Malwares Android</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🦟</div>
+                    <h3>Aedes Detector Lab</h3>
+                    <p class="period">Registro: 000359-2 (2024)</p>
+                    <p>Aplicativo de identificação de mosquitos Aedes aegypti através do som voltado para uso em laboratório</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🔥</div>
+                    <h3>FWBot</h3>
+                    <p class="period">Registro: BR512023001338-2 (2022)</p>
+                    <p>ChatBot para Configuração de Firewalls de Múltiplas Tecnologias</p>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-icon">🌐</div>
+                    <h3>ICN Stage</h3>
+                    <p class="period">Registro: 003529-4 (2022)</p>
+                    <p>Ferramenta para orquestrar avaliações experimentais de ICN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Contato</h2>
+            <div class="contact-info">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h4>Email</h4>
+                    <p>kayua@inf.ufrgs.br</p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📱</div>
+                    <h4>Telefone</h4>
+                    <p>(55) 99665-1328</p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📍</div>
+                    <h4>Localização</h4>
+                    <p>UFRGS - Campus do Vale<br>Porto Alegre, RS - Brasil</p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🔗</div>
+                    <h4>Links</h4>
+                    <p><a href="http://lattes.cnpq.br/1764844070010969" target="_blank">Lattes CV</a><br>
+                    <a href="https://orcid.org/0000-0002-3394-795X" target="_blank">ORCID</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kayuã Oleques Paim. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px; color: var(--text-secondary); font-size: 14px;">Bolsista de Doutorado CNPq | UFRGS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in on scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
