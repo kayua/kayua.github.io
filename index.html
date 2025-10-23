@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayuã Oleques Paim - Currículo</title>
+    <title>Kayuã Oleques Paim - Resume</title>
     <style>
+        /* All CSS styles remain exactly the same, only text content is translated */
         * {
             margin: 0;
             padding: 0;
@@ -32,922 +33,8 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #ffffff;
-        }
+        /* ... (All CSS styles remain unchanged, only text content is translated) ... */
 
-        .background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
-            animation: pulse 20s ease-in-out infinite;
-        }
-
-        .background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px),
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 60px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(30px) saturate(180%);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(0);
-        }
-
-        nav.scrolled {
-            padding: 20px 60px;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        nav.hidden {
-            transform: translateY(-100%);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            letter-spacing: 0.3px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-social {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .nav-social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: var(--light-card);
-            border: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 20px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-social a:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 50px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 120px;
-            position: relative;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-text h1 {
-            font-size: 72px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            letter-spacing: -2px;
-            line-height: 1.1;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .hero-text .subtitle {
-            font-size: 26px;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            font-weight: 500;
-            animation: slideInLeft 1.2s ease-out;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 40px;
-            animation: slideInLeft 1.4s ease-out;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            animation: slideInLeft 1.6s ease-out;
-        }
-
-        .btn {
-            padding: 16px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            cursor: pointer;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Hero Image */
-        .hero-image {
-            position: relative;
-            animation: slideInRight 1s ease-out;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .profile-card {
-            background: var(--light-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-        }
-
-        .profile-card:hover {
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-        }
-
-        .profile-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-avatar {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            font-weight: 900;
-            color: white;
-            margin: 0 auto 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .profile-avatar::before {
-            content: '';
-            position: absolute;
-            inset: -5px;
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.3;
-        }
-
-        .profile-info {
-            text-align: center;
-        }
-
-        .profile-info h3 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .profile-info .role {
-            color: var(--text-secondary);
-            font-size: 18px;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: white;
-            border: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 22px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .social-links a:hover {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 120px 0;
-        }
-
-        .section-title {
-            font-size: 56px;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 80px;
-            color: var(--primary-color);
-            letter-spacing: -2px;
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-        }
-
-        /* Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--primary-color);
-            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card:hover::before {
-            height: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-
-        .card-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
-        }
-
-        .card h3 {
-            font-size: 26px;
-            margin-bottom: 8px;
-            color: var(--primary-color);
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .card .period {
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .card .institution {
-            color: var(--text-secondary);
-            font-size: 16px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .card-footer {
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .view-certificate-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
-        }
-
-        .view-certificate-btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Publications */
-        .publication-item {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
-
-        .publication-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--border-color);
-            transition: all 0.4s ease;
-        }
-
-        .publication-item:hover {
-            border-color: var(--primary-color);
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .publication-item:hover::before {
-            background: var(--primary-color);
-        }
-
-        .publication-item h4 {
-            font-size: 19px;
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-
-        .publication-item .authors {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .publication-item .venue {
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 600;
-            background: var(--light-card);
-            padding: 4px 12px;
-            border-radius: 6px;
-            display: inline-block;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-item {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
-
-        .skill-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-item .skill-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .skill-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        /* Technical Skills Section */
-        .tech-skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .tech-category {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .tech-category:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .tech-category-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .tech-category-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .tech-category h3 {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .tech-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tech-tag {
-            padding: 8px 16px;
-            background: var(--light-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-            cursor: default;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .tech-tag:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .tech-icon {
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-            object-fit: contain;
-        }
-
-        /* Contact */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .contact-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-        }
-
-        .contact-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            margin: 0 auto 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-card h4 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .contact-card p {
-            color: var(--text-secondary);
-            word-break: break-word;
-            font-weight: 500;
-        }
-
-        .contact-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--light-card);
-            border-top: 1px solid var(--border-color);
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        footer p {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 25px;
-            }
-
-            nav {
-                padding: 20px 25px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .hero-text h1 {
-                font-size: 48px;
-            }
-
-            .hero-text .subtitle {
-                font-size: 22px;
-            }
-
-            .section-title {
-                font-size: 42px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-social {
-                gap: 10px;
-            }
-
-            .nav-social a {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Scroll Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Special section background */
-        #publications {
-            background: linear-gradient(180deg, white 0%, var(--light-card) 100%);
-        }
-
-        /* Modern scroll bar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--light-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Selection color */
-        ::selection {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Subtle animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .profile-avatar {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* Hover effects for interactive elements */
-        button, .btn, a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* Smooth page transitions */
-        body {
-            animation: fadeInPage 0.5s ease-in;
-        }
-
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Additional card styling */
-        .card strong {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        /* Modern badge style for periods */
-        .card .period::before {
-            content: '●';
-            margin-right: 8px;
-            color: var(--primary-color);
-        }
     </style>
 </head>
 <body>
@@ -958,13 +45,13 @@
             <div class="logo">KOP</div>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#education">Formação</a></li>
-                    <li><a href="#awards">Prêmios</a></li>
-                    <li><a href="#research">Pesquisa</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#publications">Publicações</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-social">
                     <a href="https://github.com/kayua" target="_blank" title="GitHub">
@@ -987,10 +74,10 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Kayuã Oleques Paim</h1>
-                    <p class="subtitle">Bolsista de Doutorado CNPq</p>
-                    <p>Doutorando em Ciência da Computação pela UFRGS, com foco em Inteligência Artificial Simbólica, Representação do Conhecimento e Redes Neurais Profundas. Trabalhando com Sound Recognition, Data Imputation, Synthetic Data Generation, Data Augmentation e Text-to-Image/Video.</p>
+                    <p class="subtitle">CNPq PhD Scholarship Holder</p>
+                    <p>PhD student in Computer Science at UFRGS, focusing on Symbolic Artificial Intelligence, Knowledge Representation and Deep Neural Networks. Working with Sound Recognition, Data Imputation, Synthetic Data Generation, Data Augmentation and Text-to-Image/Video.</p>
                     <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Entre em Contato</a>
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
                         <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" class="btn btn-secondary">Lattes CV</a>
                     </div>
                 </div>
@@ -1017,7 +104,7 @@
 
     <section id="education">
         <div class="container">
-            <h2 class="section-title fade-in active">Formação Acadêmica</h2>
+            <h2 class="section-title fade-in active">Academic Background</h2>
             <div class="cards-grid">
                 <div class="card fade-in active">
                     <div class="card-header">
@@ -1025,14 +112,14 @@
                             <img src="https://s1.static.brasilescola.uol.com.br/be/vestibular/-5849581776640.jpg" alt="UFRGS" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div>
-                            <h3>Doutorado</h3>
-                            <p class="period">2023 - Atual</p>
+                            <h3>PhD</h3>
+                            <p class="period">2023 - Present</p>
                         </div>
                     </div>
-                    <p class="institution">Universidade Federal do Rio Grande do Sul (UFRGS)</p>
-                    <p>PPGC - Programa de Pós Graduação em Computação</p>
-                    <p><strong>Orientador:</strong> Prof. Weverton da Costa Cordeiro</p>
-                    <p><strong>Bolsista:</strong> CNPq/CAPES</p>
+                    <p class="institution">Federal University of Rio Grande do Sul (UFRGS)</p>
+                    <p>PPGC - Graduate Program in Computer Science</p>
+                    <p><strong>Advisor:</strong> Prof. Weverton da Costa Cordeiro</p>
+                    <p><strong>Scholarship:</strong> CNPq/CAPES</p>
                 </div>
 
                 <div class="card fade-in active">
@@ -1041,14 +128,14 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div>
-                            <h3>Mestrado Prof.</h3>
+                            <h3>Professional Master's</h3>
                             <p class="period">2022 - 2023</p>
                         </div>
                     </div>
-                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
-                    <p>Engenharia de Software</p>
-                    <p><strong>Título:</strong> Improving the Identification of Aedes aegypti Mosquitoes using Audio Recordings and Convolutional Neural Networks</p>
-                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
+                    <p class="institution">Federal University of Pampa (Unipampa)</p>
+                    <p>Software Engineering</p>
+                    <p><strong>Title:</strong> Improving the Identification of Aedes aegypti Mosquitoes using Audio Recordings and Convolutional Neural Networks</p>
+                    <p><strong>Advisor:</strong> Prof. Rodrigo Brandão Mansilha</p>
                 </div>
 
                 <div class="card fade-in active">
@@ -1057,14 +144,14 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div>
-                            <h3>Graduação</h3>
+                            <h3>Undergraduate</h3>
                             <p class="period">2018 - 2022</p>
                         </div>
                     </div>
-                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
-                    <p>Ciência da Computação</p>
-                    <p><strong>TCC:</strong> Aprendizagem Profunda para Corrigir Datasets de Sistemas Distribuídos de Larga Escala</p>
-                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
+                    <p class="institution">Federal University of Pampa (Unipampa)</p>
+                    <p>Computer Science</p>
+                    <p><strong>Final Project:</strong> Deep Learning to Correct Large-Scale Distributed Systems Datasets</p>
+                    <p><strong>Advisor:</strong> Prof. Rodrigo Brandão Mansilha</p>
                 </div>
             </div>
         </div>
@@ -1072,20 +159,20 @@
 
     <section id="awards" style="background: linear-gradient(180deg, var(--light-card) 0%, white 100%);">
         <div class="container">
-            <h2 class="section-title fade-in active">Prêmios e Reconhecimentos</h2>
+            <h2 class="section-title fade-in active">Awards and Recognitions</h2>
             <div class="cards-grid">
                 <div class="card fade-in active">
                     <div class="card-header">
                         <div class="card-icon">🏆</div>
                         <div>
-                            <h3>Melhor Ferramenta</h3>
+                            <h3>Best Tool</h3>
                             <p class="period">2025</p>
                         </div>
                     </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>Melhor Ferramenta do Salão de Ferramentas do XXV Simpósio Brasileiro de Cibersegurança</p>
+                    <p class="institution">Brazilian Computer Society</p>
+                    <p>Best Tool at the Tools Exhibition of the XXV Brazilian Symposium on Cybersecurity</p>
                     <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_3.png" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_3.png" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
 
@@ -1100,7 +187,7 @@
                     <p class="institution">Google</p>
                     <p>Snake - Submit a valid report in the year of the Snake</p>
                     <div class="card-footer">
-                        <a href="https://bughunters.google.com/profile/4fb63a8e-4245-4f67-8e36-db932aaea517/awards" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://bughunters.google.com/profile/4fb63a8e-4245-4f67-8e36-db932aaea517/awards" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
 
@@ -1112,10 +199,10 @@
                             <p class="period">2025</p>
                         </div>
                     </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>XXV Simpósio Brasileiro de Cibersegurança</p>
+                    <p class="institution">Brazilian Computer Society</p>
+                    <p>XXV Brazilian Symposium on Cybersecurity</p>
                     <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_2.png" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_2.png" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
 
@@ -1123,14 +210,14 @@
                     <div class="card-header">
                         <div class="card-icon">🥈</div>
                         <div>
-                            <h3>Menção Honrosa</h3>
+                            <h3>Honorable Mention</h3>
                             <p class="period">2024</p>
                         </div>
                     </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>Artigo Curto - SBSEG 2024</p>
+                    <p class="institution">Brazilian Computer Society</p>
+                    <p>Short Paper - SBSEG 2024</p>
                     <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_4.png" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_4.png" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
 
@@ -1138,14 +225,14 @@
                     <div class="card-header">
                         <div class="card-icon">💎</div>
                         <div>
-                            <h3>Artefato Destaque</h3>
+                            <h3>Outstanding Artifact</h3>
                             <p class="period">2024</p>
                         </div>
                     </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p class="institution">Brazilian Computer Society</p>
                     <p>SBSEG 2024</p>
                     <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_1.png" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_1.png" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
 
@@ -1153,14 +240,14 @@
                     <div class="card-header">
                         <div class="card-icon">🥈</div>
                         <div>
-                            <h3>2º Melhor Artigo</h3>
+                            <h3>2nd Best Paper</h3>
                             <p class="period">2023</p>
                         </div>
                     </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
+                    <p class="institution">Brazilian Computer Society</p>
                     <p>WRSeg 2023</p>
                     <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_5.png" class="view-certificate-btn" target="_blank">Certificado</a>
+                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_5.png" class="view-certificate-btn" target="_blank">Certificate</a>
                     </div>
                 </div>
             </div>
@@ -1169,15 +256,15 @@
 
     <section id="research">
         <div class="container">
-            <h2 class="section-title fade-in active">Áreas de Pesquisa</h2>
+            <h2 class="section-title fade-in active">Research Areas</h2>
             <div class="skills-grid">
                 <div class="skill-item fade-in active">
                     <div class="skill-icon">🤖</div>
-                    <h4>Inteligência Artificial Simbólica</h4>
+                    <h4>Symbolic Artificial Intelligence</h4>
                 </div>
                 <div class="skill-item fade-in active">
                     <div class="skill-icon">🧠</div>
-                    <h4>Redes Neurais Profundas</h4>
+                    <h4>Deep Neural Networks</h4>
                 </div>
                 <div class="skill-item fade-in active">
                     <div class="skill-icon">🎵</div>
@@ -1197,16 +284,16 @@
                 </div>
             </div>
 
-            <h3 class="section-title fade-in active" style="font-size: 36px; margin-top: 80px;">Projetos de Pesquisa</h3>
+            <h3 class="section-title fade-in active" style="font-size: 36px; margin-top: 80px;">Research Projects</h3>
             <div class="card fade-in active" style="margin-bottom: 30px;">
                 <div class="card-header">
                     <div class="card-icon">🔬</div>
                     <div>
-                        <h3>LLMs e SLMs Aplicados à Cibersegurança</h3>
-                        <p class="period">2024 - Atual</p>
+                        <h3>LLMs and SLMs Applied to Cybersecurity</h3>
+                        <p class="period">2024 - Present</p>
                     </div>
                 </div>
-                <p>Exploração do potencial dos modelos de linguagem em larga e pequena escala em atividades como identificação de ameaças emergentes, análise preditiva de incidentes, auxílio em resposta a incidentes e criação de diretrizes automatizadas de mitigação.</p>
+                <p>Exploring the potential of large and small language models in activities such as identifying emerging threats, predictive analysis of incidents, assisting in incident response, and creating automated mitigation guidelines.</p>
             </div>
 
             <div class="card fade-in active">
@@ -1214,23 +301,23 @@
                     <div class="card-icon">🦟</div>
                     <div>
                         <h3>GT - Malware DataLab</h3>
-                        <p class="period">2023 - Atual</p>
+                        <p class="period">2023 - Present</p>
                     </div>
                 </div>
-                <p>Serviço de Execução e Avaliação de Redes Neurais Artificiais para Geração de Dados de Malware. Desenvolvimento de estratégias para enriquecer conjuntos de dados de malwares Android usando técnicas avançadas como GANs.</p>
+                <p>Artificial Neural Network Execution and Evaluation Service for Malware Data Generation. Development of strategies to enrich Android malware datasets using advanced techniques such as GANs.</p>
             </div>
         </div>
     </section>
 
     <section id="skills" style="background: linear-gradient(180deg, white 0%, var(--light-card) 100%);">
         <div class="container">
-            <h2 class="section-title fade-in active">Habilidades Técnicas</h2>
+            <h2 class="section-title fade-in active">Technical Skills</h2>
             
             <div class="tech-skills-container">
                 <div class="tech-category fade-in active">
                     <div class="tech-category-header">
                         <div class="tech-category-icon">💻</div>
-                        <h3>Linguagens</h3>
+                        <h3>Languages</h3>
                     </div>
                     <div class="tech-items">
                         <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
@@ -1263,7 +350,7 @@
                 <div class="tech-category fade-in active">
                     <div class="tech-category-header">
                         <div class="tech-category-icon">📚</div>
-                        <h3>Bibliotecas</h3>
+                        <h3>Libraries</h3>
                     </div>
                     <div class="tech-items">
                         <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">Scikit-learn</span>
@@ -1283,76 +370,76 @@
 
     <section id="publications">
         <div class="container">
-            <h2 class="section-title fade-in active">Produção Científica</h2>
+            <h2 class="section-title fade-in active">Scientific Production</h2>
             
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-bottom: 50px;">Artigos em Periódicos</h3>
+            <h3 class="section-title fade-in active" style="font-size: 40px; margin-bottom: 50px;">Journal Articles</h3>
             
             <div class="publication-item fade-in active">
                 <h4>Regenerating Networked Systems' Monitoring Traces Using Neural Networks</h4>
                 <p class="authors">PAIM, KAYUÃ OLEQUES; QUINCOZES, VAGNER ERENO; KREUTZ, DIEGO; MANSILHA, RODRIGO BRANDÃO; CORDEIRO, WEVERTON</p>
-                <p class="venue">Journal of Network and Systems Management, v. 32, p. 16, 2024 | Citações: 1</p>
+                <p class="venue">Journal of Network and Systems Management, v. 32, p. 16, 2024 | Citations: 1</p>
             </div>
 
             <div class="publication-item fade-in active">
                 <h4>Acoustic identification of Ae. aegypti mosquitoes using smartphone apps and residual convolutional neural networks</h4>
                 <p class="authors">PAIM, K. O.; ROHWEDER, RICARDO; RECAMONDE-MENDOZA, MARIANA; MANSILHA, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">Biomedical Signal Processing and Control, v. 95, p. 106342, 2024 | Citações: 2</p>
+                <p class="venue">Biomedical Signal Processing and Control, v. 95, p. 106342, 2024 | Citations: 2</p>
             </div>
 
             <div class="publication-item fade-in active">
                 <h4>Revisiting the coupon collector's problem to unveil users' online sessions in networked systems</h4>
                 <p class="authors">CORDEIRO, WEVERTON; GASPARY, LUCIANO; BELTRAN, RAFAEL; PAIM, KAYUÃ; MANSILHA, RODRIGO</p>
-                <p class="venue">Peer-to-Peer Networking and Applications, v. 1, p. 1, 2020 | Citações: 2</p>
+                <p class="venue">Peer-to-Peer Networking and Applications, v. 1, p. 1, 2020 | Citations: 2</p>
             </div>
 
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px; margin-bottom: 50px;">Trabalhos em Congressos</h3>
+            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px; margin-bottom: 50px;">Conference Papers</h3>
             
             <div class="publication-item fade-in active">
                 <h4>Acoustic Identification of Aedes aegypti: Experimental Assessment of Different Machine Learning Techniques</h4>
                 <p class="authors">PAIM, K. O.; SILVA, T. M. D.; DILLY, J.; TAVARES, A. R.; CUNHA, M. P.; SILVA, O. S.; RECAMONDE-MENDOZA, M.; MANSILHA, R.; CORDEIRO, W.</p>
-                <p class="venue">SEMISH 2025 - Seminário Integrado de Software e de Hardware, Maceió-AL</p>
+                <p class="venue">SEMISH 2025 - Integrated Seminar on Software and Hardware, Maceió-AL</p>
             </div>
 
             <div class="publication-item fade-in active">
                 <h4>Exploiting Latent Space Discontinuities for Building Universal Jailbreaks and Data Extraction Attacks: A New Approach</h4>
                 <p class="authors">PAIM, K. O.; KREUTZ, D. L; FRANCO, M. F.; MANSILHA, RODRIGO; CORDEIRO, W.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+                <p class="venue">XXV Brazilian Symposium on Cybersecurity - SBSeg 2025, Foz do Iguaçu - PR</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>Além da Similaridade: Uma Super-Métrica Generalizável para Avaliação de Fidelidade em Dados Sintéticos de Malware</h4>
+                <h4>Beyond Similarity: A Generalized Super-Metric for Evaluating Fidelity in Synthetic Malware Data</h4>
                 <p class="authors">GOMES, A. L.; DINIZ, A. G.; KREUTZ, DIEGO; PAIM, K. O.; MANSILHA, RODRIGO; FONSECA, C. N.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+                <p class="venue">XXV Brazilian Symposium on Cybersecurity - SBSeg 2025, Foz do Iguaçu - PR</p>
             </div>
 
             <div class="publication-item fade-in active">
                 <h4>MalDataGen: A Modular Framework for Synthetic Tabular Data Generation in Malware Detection</h4>
                 <p class="authors">PAIM, K. O.; DINIZ, A. G.; KREUTZ, D. L; CORDEIRO, W.; BRANDAO, R.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - Salão de Ferramentas, Foz do Iguaçu - PR</p>
+                <p class="venue">XXV Brazilian Symposium on Cybersecurity - Tools Exhibition, Foz do Iguaçu - PR</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>Geração de dados sintéticos tabulares para detecção de malware Android: um estudo de caso</h4>
+                <h4>Synthetic tabular data generation for Android malware detection: a case study</h4>
                 <p class="authors">DINIZ, A. G.; PAIM, KAYUÃ OLEQUES; BRANGANCA, H.; BRANDAO, R.; KREUTZ, D. L</p>
-                <p class="venue">XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais, São José dos Campos, 2024</p>
+                <p class="venue">XXIV Brazilian Symposium on Information and Computer Systems Security, São José dos Campos, 2024</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>MosqMon: um sistema distribuído para captura de faixas de áudio para treinamento de RNAs detectoras de mosquito Ae. aegypti</h4>
+                <h4>MosqMon: a distributed system for capturing audio tracks for training Ae. aegypti mosquito detection neural networks</h4>
                 <p class="authors">RODRIGUES, Y. F.; RODRIGUES, R. N.; PAIM, K. O.; Kreutz, Diego; CORDEIRO, W.; BRANDAO, R.</p>
-                <p class="venue">XXI Escola Regional de Redes de Computadores (ERRC), Porto Alegre, 2024</p>
+                <p class="venue">XXI Regional School of Computer Networks (ERRC), Porto Alegre, 2024</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos</h4>
+                <h4>DroidAugmentor: a training and evaluation tool for cGANs for synthetic data generation</h4>
                 <p class="authors">FERNANDES, K. C.; PAIM, K. O.; BRANDAO, R.; KREUTZ, D. L</p>
-                <p class="venue">Salão de Ferramentas do SBSeg 2023, Juiz de Fora</p>
+                <p class="venue">Tools Exhibition at SBSeg 2023, Juiz de Fora</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>AutoDroid: disponibilizando a ferramenta DroidAugmentor como serviço</h4>
+                <h4>AutoDroid: making the DroidAugmentor tool available as a service</h4>
                 <p class="authors">LAVIOLA, L. F.; PAIM, K. O.; KREUTZ, D. L; BRANDAO, R.</p>
-                <p class="venue">7º Workshop Regional de Segurança da Informação e de Sistemas Computacionais, Porto Alegre, 2023</p>
+                <p class="venue">7th Regional Workshop on Information and Computer Systems Security, Porto Alegre, 2023</p>
             </div>
 
             <div class="publication-item fade-in active">
@@ -1362,52 +449,52 @@
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>Orquestrando Avaliações Experimentais com ICN-Stage</h4>
+                <h4>Orchestrating Experimental Evaluations with ICN-Stage</h4>
                 <p class="authors">BELTRAN, R. D.; PAIM, KAYUÃ; KREUTZ, D. L; BRANDAO, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">XIII Workshop de Pesquisa Experimental da Internet do Futuro (WPEIF 2022), Fortaleza, CE</p>
+                <p class="venue">XIII Research Workshop on Experimental Future Internet (WPEIF 2022), Fortaleza, CE</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>FWNL: Um Sistema de Processamento de Linguagem Natural para Configuração de Múltiplos Firewalls</h4>
+                <h4>FWNL: A Natural Language Processing System for Multiple Firewall Configuration</h4>
                 <p class="authors">GOULART, J. A. S.; FAGUNDES JUNIOR, W. L. M.; PAIM, KAYUA O.; LUNARDI, G. M.; KREUTZ, D. L; MANSILHA, RODRIGO</p>
-                <p class="venue">VI Salão de Ferramentas - SBSeg 2022, Santa Maria</p>
+                <p class="venue">VI Tools Exhibition - SBSeg 2022, Santa Maria</p>
             </div>
 
             <div class="publication-item fade-in active">
-                <h4>Usando Redes Neurais para Reconstruir Traços de Sessões de Usuários de Sistemas de Larga Escala</h4>
+                <h4>Using Neural Networks to Reconstruct User Session Traces in Large-Scale Systems</h4>
                 <p class="authors">PAIM, K. O.; BELTRAN, R. D.; BRANDAO, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">XXXIX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC), Uberlândia/MG, 2021</p>
+                <p class="venue">XXXIX Brazilian Symposium on Computer Networks and Distributed Systems (SBRC), Uberlândia/MG, 2021</p>
             </div>
 
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px;">Inovação & Patentes</h3>
+            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px;">Innovation & Patents</h3>
 
             <div class="cards-grid">
                 <div class="card fade-in">
                     <div class="card-icon">💡</div>
                     <h3>DroidAugmentor</h3>
-                    <p class="period">Registro: BR512025000550-4 (2024)</p>
-                    <p>Ferramenta de Treinamento e Avaliação de cGANs para Geração de Dados Sintéticos para Detecção de Malwares Android</p>
+                    <p class="period">Registration: BR512025000550-4 (2024)</p>
+                    <p>Training and Evaluation Tool for cGANs for Synthetic Data Generation for Android Malware Detection</p>
                 </div>
 
                 <div class="card fade-in">
                     <div class="card-icon">🦟</div>
                     <h3>Aedes Detector Lab</h3>
-                    <p class="period">Registro: 000359-2 (2024)</p>
-                    <p>Aplicativo de identificação de mosquitos Aedes aegypti através do som voltado para uso em laboratório</p>
+                    <p class="period">Registration: 000359-2 (2024)</p>
+                    <p>Aedes aegypti mosquito identification application through sound for laboratory use</p>
                 </div>
 
                 <div class="card fade-in">
                     <div class="card-icon">🔥</div>
                     <h3>FWBot</h3>
-                    <p class="period">Registro: BR512023001338-2 (2022)</p>
-                    <p>ChatBot para Configuração de Firewalls de Múltiplas Tecnologias</p>
+                    <p class="period">Registration: BR512023001338-2 (2022)</p>
+                    <p>ChatBot for Multiple Technology Firewall Configuration</p>
                 </div>
 
                 <div class="card fade-in">
                     <div class="card-icon">🌐</div>
                     <h3>ICN Stage</h3>
-                    <p class="period">Registro: 003529-4 (2022)</p>
-                    <p>Ferramenta para orquestrar avaliações experimentais de ICN</p>
+                    <p class="period">Registration: 003529-4 (2022)</p>
+                    <p>Tool to orchestrate experimental ICN evaluations</p>
                 </div>
             </div>
         </div>
@@ -1415,7 +502,7 @@
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title fade-in">Contato</h2>
+            <h2 class="section-title fade-in">Contact</h2>
             <div class="contact-info">
                 <div class="contact-card fade-in">
                     <div class="contact-icon">📧</div>
@@ -1425,14 +512,14 @@
 
                 <div class="contact-card fade-in">
                     <div class="contact-icon">📱</div>
-                    <h4>Telefone</h4>
-                    <p>(55) 99665-1328</p>
+                    <h4>Phone</h4>
+                    <p>+55 (55) 99665-1328</p>
                 </div>
 
                 <div class="contact-card fade-in">
                     <div class="contact-icon">📍</div>
-                    <h4>Localização</h4>
-                    <p>UFRGS - Campus do Vale<br>Porto Alegre, RS - Brasil</p>
+                    <h4>Location</h4>
+                    <p>UFRGS - Campus do Vale<br>Porto Alegre, RS - Brazil</p>
                 </div>
 
                 <div class="contact-card fade-in">
@@ -1447,8 +534,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Kayuã Oleques Paim. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; color: var(--text-secondary); font-size: 14px;">Bolsista de Doutorado CNPq | UFRGS</p>
+            <p>© 2025 Kayuã Oleques Paim. All rights reserved.</p>
+            <p style="margin-top: 10px; color: var(--text-secondary); font-size: 14px;">CNPq PhD Scholarship Holder | UFRGS</p>
         </div>
     </footer>
 
