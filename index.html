@@ -50,9 +50,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+            background:
+                    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
             animation: pulse 20s ease-in-out infinite;
         }
 
@@ -63,9 +63,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px),
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+            background-image:
+                    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px),
+                    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
         }
 
         @keyframes pulse {
@@ -164,7 +164,76 @@
             gap: 15px;
             align-items: center;
         }
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-top: 60px;
+        }
 
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--border-color));
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 60px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -57px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            background: var(--primary-color);
+            border: 4px solid var(--light-bg);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--border-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline-item .institution {
+            color: var(--text-tertiary);
+            font-size: 17px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .timeline-item .period {
+            color: var(--text-tertiary);
+            font-size: 15px;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 16px;
+        }
         .nav-social a {
             width: 40px;
             height: 40px;
@@ -491,6 +560,44 @@
             margin-bottom: 25px;
         }
 
+
+        .card-icon2 {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-icon2 {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-icon2 svg {
+            width: 36px;
+            height: 36px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card-icon3 {
+            width: 75px;
+            height: 75px;
+            border-radius: 1px;
+            background: rgba(255, 255, 255, 0.99);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            flex-shrink: 0;
+        }
         .card-icon {
             width: 70px;
             height: 70px;
@@ -750,58 +857,76 @@
             gap: 30px;
         }
 
+
         .contact-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 40px;
+            background: var(--light-card);
+            padding: 50px;
+            border-radius: 24px;
+            border: 2px solid var(--border-color);
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .contact-card.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
             border-color: var(--primary-color);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
         }
 
         .contact-icon {
             width: 80px;
             height: 80px;
-            border-radius: 20px;
             background: var(--primary-color);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
             margin: 0 auto 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .contact-card h4 {
             font-size: 22px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 800;
-            color: var(--primary-color);
         }
 
         .contact-card p {
             color: var(--text-secondary);
-            word-break: break-word;
-            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .contact-card a {
-            color: var(--primary-color);
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .contact-card a:hover {
-            text-decoration: underline;
+            color: var(--primary-color);
         }
+
+
+
+
+
 
         /* Footer */
         footer {
@@ -951,564 +1076,663 @@
     </style>
 </head>
 <body>
-    <div class="background"></div>
+<div class="background"></div>
 
-    <nav id="navbar" class="scrolled">
-        <div class="nav-container">
-            <div class="logo">KOP</div>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#education">Formação</a></li>
-                    <li><a href="#awards">Prêmios</a></li>
-                    <li><a href="#research">Pesquisa</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#publications">Publicações</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-                <div class="nav-social">
-                    <a href="https://github.com/kayua" target="_blank" title="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kayuaoleques/" target="_blank" title="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                </div>
+<nav id="navbar" class="scrolled">
+    <div class="nav-container">
+        <div class="logo">KOP</div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://github.com/kayua" target="_blank" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/kayuaoleques/" target="_blank" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Kayuã Oleques Paim</h1>
-                    <p class="subtitle">Bolsista de Doutorado CNPq</p>
-                    <p>Doutorando em Ciência da Computação na UFRGS, com foco em Inteligência Artificial Simbólica, Representação do Conhecimento e Redes Neurais Profundas. Atuando com Reconhecimento de Som, PLN (Processamento de Linguagem Natural), Geração de Dados Sintéticos, Modelos Generativos, Aumento de Dados e Texto-para-Imagem/Vídeo.</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Entre em Contato</a>
-                        <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" class="btn btn-secondary">Lattes CV</a>
-                    </div>
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Kayuã Oleques Paim</h1>
+                <p class="subtitle">CNPq PhD Fellow</p>
+                <p>PhD candidate in Computer Science at the Federal University of Rio Grande do Sul (UFRGS), Master's in Software Engineering and Bachelor's in Computer Science from the Federal University of Pampa (Unipampa). My main research interests are focused on Symbolic Artificial Intelligence, Knowledge Representation, and Deep Neural Networks. I am currently working with Sound Recognition, Data Imputation, Synthetic Data Generation, Data Augmentation, and Text-to-Image/Video.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" class="btn btn-secondary">Lattes CV</a>
                 </div>
+            </div>
 
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-content">
-                            <div class="profile-avatar">KP</div>
-                            <div class="profile-info">
-                                <h3>Kayuã Paim</h3>
-                                <p class="role">PhD Student | AI Researcher</p>
-                                <div class="social-links">
-                                    <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" title="Lattes">📄</a>
-                                    <a href="https://orcid.org/0000-0002-3394-795X" target="_blank" title="ORCID">🔬</a>
-                                    <a href="mailto:kayua@inf.ufrgs.br" title="Email">✉️</a>
-                                </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-content">
+                        <div class="profile-avatar">KP</div>
+                        <div class="profile-info">
+                            <h3>Kayuã Paim</h3>
+                            <p class="role">PhD Student | AI Researcher</p>
+                            <div class="social-links">
+                                <a href="http://lattes.cnpq.br/1764844070010969" target="_blank" title="Lattes">📄</a>
+                                <a href="https://orcid.org/0000-0002-3394-795X" target="_blank" title="ORCID">🔬</a>
+                                <a href="mailto:kayua@inf.ufrgs.br" title="Email">✉️</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title fade-in active">Formação Acadêmica</h2>
-            <div class="cards-grid">
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: white; padding: 10px;">
-                            <img src="https://s1.static.brasilescola.uol.com.br/be/vestibular/-5849581776640.jpg" alt="UFRGS" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div>
-                            <h3>Doutorado</h3>
-                            <p class="period">2023 - Atual</p>
-                        </div>
-                    </div>
-                    <p class="institution">Universidade Federal do Rio Grande do Sul (UFRGS)</p>
-                    <p>PPGC - Programa de Pós Graduação em Computação</p>
-                    <p><strong>Orientador:</strong> Prof. Weverton da Costa Cordeiro</p>
-                    <p><strong>Bolsista:</strong> CNPq/CAPES</p>
-                </div>
+<!--<section id="education">-->
+<!--    <div class="container">-->
+<!--        <h2 class="section-title fade-in active">Formação Acadêmica</h2>-->
+<!--        <div class="cards-grid">-->
+<!--            <div class="card fade-in active">-->
+<!--                <div class="card-header">-->
+<!--                    <div class="card-icon" style="background: white; padding: 10px;">-->
+<!--                        <img src="https://s1.static.brasilescola.uol.com.br/be/vestibular/-5849581776640.jpg" alt="UFRGS" style="width: 100%; height: 100%; object-fit: contain;">-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <h3>Doutorado</h3>-->
+<!--                        <p class="period">2023 - Atual</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <p class="institution">Universidade Federal do Rio Grande do Sul (UFRGS)</p>-->
+<!--                <p>PPGC - Programa de Pós Graduação em Computação</p>-->
+<!--                <p><strong>Orientador:</strong> Prof. Weverton da Costa Cordeiro</p>-->
+<!--                <p><strong>Bolsista:</strong> CNPq/CAPES</p>-->
+<!--            </div>-->
 
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: white; padding: 10px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div>
-                            <h3>Mestrado Prof.</h3>
-                            <p class="period">2022 - 2023</p>
-                        </div>
-                    </div>
-                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
-                    <p>Engenharia de Software</p>
-                    <p><strong>Título:</strong> Improving the Identification of Aedes aegypti Mosquitoes using Audio Recordings and Convolutional Neural Networks</p>
-                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
-                </div>
+<!--            <div class="card fade-in active">-->
+<!--                <div class="card-header">-->
+<!--                    <div class="card-icon" style="background: white; padding: 10px;">-->
+<!--                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <h3>Mestrado Prof.</h3>-->
+<!--                        <p class="period">2022 - 2023</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <p class="institution">Universidade Federal do Pampa (Unipampa)</p>-->
+<!--                <p>Engenharia de Software</p>-->
+<!--                <p><strong>Título:</strong> Improving the Identification of Aedes aegypti Mosquitoes using Audio Recordings and Convolutional Neural Networks</p>-->
+<!--                <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>-->
+<!--            </div>-->
 
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: white; padding: 10px;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div>
-                            <h3>Graduação</h3>
-                            <p class="period">2018 - 2022</p>
-                        </div>
-                    </div>
-                    <p class="institution">Universidade Federal do Pampa (Unipampa)</p>
-                    <p>Ciência da Computação</p>
-                    <p><strong>TCC:</strong> Aprendizagem Profunda para Corrigir Datasets de Sistemas Distribuídos de Larga Escala</p>
-                    <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>
-                </div>
+<!--            <div class="card fade-in active">-->
+<!--                <div class="card-header">-->
+<!--                    <div class="card-icon" style="background: white; padding: 10px;">-->
+<!--                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Unipampa_Assinatura_visual_logo_logotipo_cores.svg/1200px-Unipampa_Assinatura_visual_logo_logotipo_cores.svg.png" alt="Unipampa" style="width: 100%; height: 100%; object-fit: contain;">-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <h3>Graduação</h3>-->
+<!--                        <p class="period">2018 - 2022</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <p class="institution">Universidade Federal do Pampa (Unipampa)</p>-->
+<!--                <p>Ciência da Computação</p>-->
+<!--                <p><strong>TCC:</strong> Aprendizagem Profunda para Corrigir Datasets de Sistemas Distribuídos de Larga Escala</p>-->
+<!--                <p><strong>Orientador:</strong> Prof. Rodrigo Brandão Mansilha</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section id="education">
+    <div class="container">
+        <h2 class="section-title fade-in">Education</h2>
+
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <h3>Ph.D. in Computer Science</h3>
+                <div class="institution">Federal University of Rio Grande do Sul (UFRGS)</div>
+                <div class="period">March 2023 - Present</div>
+                <p>Focus on Artificial Intelligence, Information Security, and Data Science. CNPq Scholarship holder. Research on Deep Learning, Generative AI, and Cybersecurity applications.</p>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <h3>Master's in Computer Science</h3>
+                <div class="institution">Federal University of Rio Grande do Sul (UFRGS)</div>
+                <div class="period">March 2021 - February 2023</div>
+                <p>Focus on Deep Learning applied to Cybersecurity. Thesis on data generation using GANs for malware detection systems. CAPES Scholarship holder.</p>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <h3>Bachelor's in Computer Science</h3>
+                <div class="institution">Federal University of Rio Grande do Sul (UFRGS)</div>
+                <div class="period">March 2017 - December 2020</div>
+                <p>Final project on using Deep Learning for monitoring traces reconstruction in large-scale systems. Academic Excellence Scholarship holder (2019-2020).</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="awards" style="background: linear-gradient(180deg, var(--light-card) 0%, white 100%);">
-        <div class="container">
-            <h2 class="section-title fade-in active">Prêmios e Reconhecimentos</h2>
-            <div class="cards-grid">
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">🏆</div>
-                        <div>
-                            <h3>Melhor Ferramenta</h3>
-                            <p class="period">2025</p>
-                        </div>
-                    </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>Melhor Ferramenta do Salão de Ferramentas do XXV Simpósio Brasileiro de Cibersegurança</p>
-                    <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_3.png" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
 
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">🐍</div>
-                        <div>
-                            <h3>Google BugHunter Awards</h3>
-                            <p class="period">2025</p>
-                        </div>
-                    </div>
-                    <p class="institution">Google</p>
-                    <p>Snake - Submit a valid report in the year of the Snake</p>
-                    <div class="card-footer">
-                        <a href="https://bughunters.google.com/profile/4fb63a8e-4245-4f67-8e36-db932aaea517/awards" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
-
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">⭐</div>
-                        <div>
-                            <h3>Google Award</h3>
-                            <p class="period">2025</p>
-                        </div>
-                    </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>XXV Simpósio Brasileiro de Cibersegurança</p>
-                    <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_2.png" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
-
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">🥈</div>
-                        <div>
-                            <h3>Menção Honrosa</h3>
-                            <p class="period">2024</p>
-                        </div>
-                    </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>Artigo Curto - SBSEG 2024</p>
-                    <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_4.png" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
-
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">💎</div>
-                        <div>
-                            <h3>Artefato Destaque</h3>
-                            <p class="period">2024</p>
-                        </div>
-                    </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>SBSEG 2024</p>
-                    <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_1.png" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
-
-                <div class="card fade-in active">
-                    <div class="card-header">
-                        <div class="card-icon">🥈</div>
-                        <div>
-                            <h3>2º Melhor Artigo</h3>
-                            <p class="period">2023</p>
-                        </div>
-                    </div>
-                    <p class="institution">Sociedade Brasileira de Computação</p>
-                    <p>WRSeg 2023</p>
-                    <div class="card-footer">
-                        <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_5.png" class="view-certificate-btn" target="_blank">Certificado</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="research">
-        <div class="container">
-            <h2 class="section-title fade-in active">Áreas de Pesquisa</h2>
-            <div class="skills-grid">
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">🤖</div>
-                    <h4>Inteligência Artificial Simbólica</h4>
-                </div>
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">🧠</div>
-                    <h4>Redes Neurais Profundas</h4>
-                </div>
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">🎵</div>
-                    <h4>Sound Recognition</h4>
-                </div>
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">🔄</div>
-                    <h4>Synthetic Data Generation</h4>
-                </div>
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">🎨</div>
-                    <h4>Text-to-Image/Video</h4>
-                </div>
-                <div class="skill-item fade-in active">
-                    <div class="skill-icon">📈</div>
-                    <h4>Data Augmentation</h4>
-                </div>
-            </div>
-
-            <h3 class="section-title fade-in active" style="font-size: 36px; margin-top: 80px;">Projetos de Pesquisa</h3>
-            <div class="card fade-in active" style="margin-bottom: 30px;">
+<section id="awards" style="background: linear-gradient(180deg, var(--light-card) 0%, white 100%);">
+    <div class="container">
+        <h2 class="section-title fade-in active">Awards and Honors</h2>
+        <div class="cards-grid">
+            <div class="card fade-in active">
                 <div class="card-header">
-                    <div class="card-icon">🔬</div>
+                    <div class="card-icon3">🏆</div>
                     <div>
-                        <h3>LLMs e SLMs Aplicados à Cibersegurança</h3>
-                        <p class="period">2024 - Atual</p>
+                        <h3>Best Tool</h3>
+                        <p class="period">2025</p>
                     </div>
                 </div>
-                <p>Exploração do potencial dos modelos de linguagem em larga e pequena escala em atividades como identificação de ameaças emergentes, análise preditiva de incidentes, auxílio em resposta a incidentes e criação de diretrizes automatizadas de mitigação.</p>
+                <p class="institution">Brazilian Computer Society</p>
+                <p>Best Tool at the Tool Exhibition of the XXV Brazilian Symposium on Cybersecurity</p>
+                <div class="card-footer">
+                    <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_3.png" class="view-certificate-btn" target="_blank">Certificate</a>
+                </div>
             </div>
 
             <div class="card fade-in active">
                 <div class="card-header">
-                    <div class="card-icon">🦟</div>
+                    <div class="card-icon3">⭐</div>
                     <div>
-                        <h3>GT - Malware DataLab</h3>
-                        <p class="period">2023 - Atual</p>
+                        <h3>Google BugHunter Awards</h3>
+                        <p class="period">2025</p>
                     </div>
                 </div>
-                <p>Serviço de Execução e Avaliação de Redes Neurais Artificiais para Geração de Dados de Malware. Desenvolvimento de estratégias para enriquecer conjuntos de dados de malwares Android usando técnicas avançadas como GANs.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" style="background: linear-gradient(180deg, white 0%, var(--light-card) 100%);">
-        <div class="container">
-            <h2 class="section-title fade-in active">Habilidades Técnicas</h2>
-            
-            <div class="tech-skills-container">
-                <div class="tech-category fade-in active">
-                    <div class="tech-category-header">
-                        <div class="tech-category-icon">💻</div>
-                        <h3>Linguagens</h3>
-                    </div>
-                    <div class="tech-items">
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">C</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">Kotlin</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Shell">Shell</span>
-                    </div>
-                </div>
-
-                <div class="tech-category fade-in active">
-                    <div class="tech-category-header">
-                        <div class="tech-category-icon">🔧</div>
-                        <h3>Frameworks</h3>
-                    </div>
-                    <div class="tech-items">
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">Keras</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://huggingface.co/favicon.ico" alt="Transformers">Transformers</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://python.langchain.com/img/brand/wordmark.png" alt="LangChain" style="height: 20px; width: auto;">LangChain</span>
-                    </div>
-                </div>
-
-                <div class="tech-category fade-in active">
-                    <div class="tech-category-header">
-                        <div class="tech-category-icon">📚</div>
-                        <h3>Bibliotecas</h3>
-                    </div>
-                    <div class="tech-items">
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">Scikit-learn</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">Matplotlib</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://scipy.org/images/logo.svg" alt="SciPy" style="height: 24px; width: auto;">SciPy</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">NumPy</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nvidia_CUDA_Logo.jpg" alt="CUDA">CUDA</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://raw.githubusercontent.com/google/jax/main/images/jax_logo_250px.png" alt="JAX" style="height: 20px; width: auto;">JAX</span>
-                        <span class="tech-tag"><img class="tech-icon" src="https://gymnasium.farama.org/_static/img/gymnasium_black.svg" alt="Gymnasium" style="height: 22px; width: auto;">Gymnasium</span>
-                    </div>
+                <p class="institution">Google</p>
+                <p>Snake - Submit a valid report in the year of the Snake</p>
+                <div class="card-footer">
+                    <a href="https://bughunters.google.com/profile/4fb63a8e-4245-4f67-8e36-db932aaea517/awards" class="view-certificate-btn" target="_blank">Certificate</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="publications">
-        <div class="container">
-            <h2 class="section-title fade-in active">Produção Científica</h2>
-            
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-bottom: 50px;">Artigos em Periódicos</h3>
-            
-            <div class="publication-item fade-in active">
-                <h4>Regenerating Networked Systems' Monitoring Traces Using Neural Networks</h4>
-                <p class="authors">PAIM, KAYUÃ OLEQUES; QUINCOZES, VAGNER ERENO; KREUTZ, DIEGO; MANSILHA, RODRIGO BRANDÃO; CORDEIRO, WEVERTON</p>
-                <p class="venue">Journal of Network and Systems Management, v. 32, p. 16, 2024 | Citações: 1</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Acoustic identification of Ae. aegypti mosquitoes using smartphone apps and residual convolutional neural networks</h4>
-                <p class="authors">PAIM, K. O.; ROHWEDER, RICARDO; RECAMONDE-MENDOZA, MARIANA; MANSILHA, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">Biomedical Signal Processing and Control, v. 95, p. 106342, 2024 | Citações: 2</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Revisiting the coupon collector's problem to unveil users' online sessions in networked systems</h4>
-                <p class="authors">CORDEIRO, WEVERTON; GASPARY, LUCIANO; BELTRAN, RAFAEL; PAIM, KAYUÃ; MANSILHA, RODRIGO</p>
-                <p class="venue">Peer-to-Peer Networking and Applications, v. 1, p. 1, 2020 | Citações: 2</p>
-            </div>
-
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px; margin-bottom: 50px;">Trabalhos em Congressos</h3>
-            
-            <div class="publication-item fade-in active">
-                <h4>Acoustic Identification of Aedes aegypti: Experimental Assessment of Different Machine Learning Techniques</h4>
-                <p class="authors">PAIM, K. O.; SILVA, T. M. D.; DILLY, J.; TAVARES, A. R.; CUNHA, M. P.; SILVA, O. S.; RECAMONDE-MENDOZA, M.; MANSILHA, R.; CORDEIRO, W.</p>
-                <p class="venue">SEMISH 2025 - Seminário Integrado de Software e de Hardware, Maceió-AL</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Exploiting Latent Space Discontinuities for Building Universal Jailbreaks and Data Extraction Attacks: A New Approach</h4>
-                <p class="authors">PAIM, K. O.; KREUTZ, D. L; FRANCO, M. F.; MANSILHA, RODRIGO; CORDEIRO, W.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Além da Similaridade: Uma Super-Métrica Generalizável para Avaliação de Fidelidade em Dados Sintéticos de Malware</h4>
-                <p class="authors">GOMES, A. L.; DINIZ, A. G.; KREUTZ, DIEGO; PAIM, K. O.; MANSILHA, RODRIGO; FONSECA, C. N.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>MalDataGen: A Modular Framework for Synthetic Tabular Data Generation in Malware Detection</h4>
-                <p class="authors">PAIM, K. O.; DINIZ, A. G.; KREUTZ, D. L; CORDEIRO, W.; BRANDAO, R.</p>
-                <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - Salão de Ferramentas, Foz do Iguaçu - PR</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Geração de dados sintéticos tabulares para detecção de malware Android: um estudo de caso</h4>
-                <p class="authors">DINIZ, A. G.; PAIM, KAYUÃ OLEQUES; BRANGANCA, H.; BRANDAO, R.; KREUTZ, D. L</p>
-                <p class="venue">XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais, São José dos Campos, 2024</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>MosqMon: um sistema distribuído para captura de faixas de áudio para treinamento de RNAs detectoras de mosquito Ae. aegypti</h4>
-                <p class="authors">RODRIGUES, Y. F.; RODRIGUES, R. N.; PAIM, K. O.; Kreutz, Diego; CORDEIRO, W.; BRANDAO, R.</p>
-                <p class="venue">XXI Escola Regional de Redes de Computadores (ERRC), Porto Alegre, 2024</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos</h4>
-                <p class="authors">FERNANDES, K. C.; PAIM, K. O.; BRANDAO, R.; KREUTZ, D. L</p>
-                <p class="venue">Salão de Ferramentas do SBSeg 2023, Juiz de Fora</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>AutoDroid: disponibilizando a ferramenta DroidAugmentor como serviço</h4>
-                <p class="authors">LAVIOLA, L. F.; PAIM, K. O.; KREUTZ, D. L; BRANDAO, R.</p>
-                <p class="venue">7º Workshop Regional de Segurança da Informação e de Sistemas Computacionais, Porto Alegre, 2023</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Fix Me If You Can: Using Neural Networks to Regenerate Networked Systems' Monitoring Traces</h4>
-                <p class="authors">PAIM, KAYUA O.; QUINCOZES, VAGNER E.; KREUTZ, DIEGO; MANSILHA, RODRIGO B.; CORDEIRO, WEVERTON</p>
-                <p class="venue">NOMS 2022 - IEEE/IFIP Network Operations and Management Symposium, Budapest</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Orquestrando Avaliações Experimentais com ICN-Stage</h4>
-                <p class="authors">BELTRAN, R. D.; PAIM, KAYUÃ; KREUTZ, D. L; BRANDAO, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">XIII Workshop de Pesquisa Experimental da Internet do Futuro (WPEIF 2022), Fortaleza, CE</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>FWNL: Um Sistema de Processamento de Linguagem Natural para Configuração de Múltiplos Firewalls</h4>
-                <p class="authors">GOULART, J. A. S.; FAGUNDES JUNIOR, W. L. M.; PAIM, KAYUA O.; LUNARDI, G. M.; KREUTZ, D. L; MANSILHA, RODRIGO</p>
-                <p class="venue">VI Salão de Ferramentas - SBSeg 2022, Santa Maria</p>
-            </div>
-
-            <div class="publication-item fade-in active">
-                <h4>Usando Redes Neurais para Reconstruir Traços de Sessões de Usuários de Sistemas de Larga Escala</h4>
-                <p class="authors">PAIM, K. O.; BELTRAN, R. D.; BRANDAO, R.; CORDEIRO, WEVERTON</p>
-                <p class="venue">XXXIX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC), Uberlândia/MG, 2021</p>
-            </div>
-
-            <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px;">Inovação & Patentes</h3>
-
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <div class="card-icon">💡</div>
-                    <h3>DroidAugmentor</h3>
-                    <p class="period">Registro: BR512025000550-4 (2024)</p>
-                    <p>Ferramenta de Treinamento e Avaliação de cGANs para Geração de Dados Sintéticos para Detecção de Malwares Android</p>
+            <div class="card fade-in active">
+                <div class="card-header">
+                    <div class="card-icon3">⭐</div>
+                    <div>
+                        <h3>Google Award</h3>
+                        <p class="period">2025</p>
+                    </div>
                 </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon">🦟</div>
-                    <h3>Aedes Detector Lab</h3>
-                    <p class="period">Registro: 000359-2 (2024)</p>
-                    <p>Aplicativo de identificação de mosquitos Aedes aegypti através do som voltado para uso em laboratório</p>
+                <p class="institution">Brazilian Computer Society</p>
+                <p>XXV Brazilian Symposium on Cybersecurity</p>
+                <div class="card-footer">
+                    <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_2.png" class="view-certificate-btn" target="_blank">Certificate</a>
                 </div>
+            </div>
 
-                <div class="card fade-in">
-                    <div class="card-icon">🔥</div>
-                    <h3>FWBot</h3>
-                    <p class="period">Registro: BR512023001338-2 (2022)</p>
-                    <p>ChatBot para Configuração de Firewalls de Múltiplas Tecnologias</p>
+            <div class="card fade-in active">
+                <div class="card-header">
+                    <div class="card-icon3">🥈</div>
+                    <div>
+                        <h3>Honorable Mention</h3>
+                        <p class="period">2024</p>
+                    </div>
                 </div>
+                <p class="institution">Brazilian Computer Society</p>
+                <p>Short Paper - SBSEG 2024</p>
+                <div class="card-footer">
+                    <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_4.png" class="view-certificate-btn" target="_blank">Certificate</a>
+                </div>
+            </div>
 
-                <div class="card fade-in">
-                    <div class="card-icon">🌐</div>
-                    <h3>ICN Stage</h3>
-                    <p class="period">Registro: 003529-4 (2022)</p>
-                    <p>Ferramenta para orquestrar avaliações experimentais de ICN</p>
+            <div class="card fade-in active">
+                <div class="card-header">
+                    <div class="card-icon3">💎</div>
+                    <div>
+                        <h3>Distinguished Artifact</h3>
+                        <p class="period">2024</p>
+                    </div>
+                </div>
+                <p class="institution">Brazilian Computer Society</p>
+                <p>SBSEG 2024</p>
+                <div class="card-footer">
+                    <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_1.png" class="view-certificate-btn" target="_blank">Certificate</a>
+                </div>
+            </div>
+
+            <div class="card fade-in active">
+                <div class="card-header">
+                    <div class="card-icon3">🥈</div>
+                    <div>
+                        <h3>2nd Best Paper</h3>
+                        <p class="period">2023</p>
+                    </div>
+                </div>
+                <p class="institution">Brazilian Computer Society</p>
+                <p>WRSeg 2023</p>
+                <div class="card-footer">
+                    <a href="https://github.com/kayua/kayua.github.io/blob/main/Certificados/Certificado_5.png" class="view-certificate-btn" target="_blank">Certificate</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Contato</h2>
-            <div class="contact-info">
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📧</div>
-                    <h4>Email</h4>
-                    <p>kayua@inf.ufrgs.br</p>
+
+<section id="research">
+    <div class="container">
+        <h2 class="section-title fade-in active">Research Areas</h2>
+        <div class="skills-grid">
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Curriculum Learning</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Natural Language Process</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Sound Recognition</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Synthetic Data Generation</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Text-to-Image/Video</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Data Augmentation</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>Diffusion Models</h4>
+            </div>
+            <div class="skill-item fade-in active">
+                <div class="skill-icon"></div>
+                <h4>LLM Architecture</h4>
+            </div>
+        </div>
+
+        <h3 class="section-title fade-in active" style="font-size: 36px; margin-top: 80px;">Research Projects</h3>
+
+        <div class="card fade-in active" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon3">🛡️</div>
+                <div>
+                    <h3>LLMs and SLMs Applied to Cybersecurity</h3>
+                    <p class="period">2024 - Present</p>
                 </div>
+            </div>
+            <p>Exploring the potential of large and small-scale language models in activities such as emerging threat identification, predictive incident analysis, incident response support, and creation of automated mitigation guidelines.</p>
+        </div>
 
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📱</div>
-                    <h4>Telefone</h4>
-                    <p>(55) 99665-1328</p>
+        <div class="card fade-in active" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <div class="card-icon3">🛡️</div>
+                <div>
+                    <h3>GT - Malware DataLab</h3>
+                    <p class="period">2023 - Present</p>
                 </div>
+            </div>
+            <p>Execution and Evaluation Service for Artificial Neural Networks for Malware Data Generation. Development of strategies to enrich Android malware datasets using advanced techniques such as GANs.</p>
+        </div>
 
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📍</div>
-                    <h4>Localização</h4>
-                    <p>UFRGS - Campus do Vale<br>Porto Alegre, RS - Brasil</p>
+        <div class="card fade-in active">
+            <div class="card-header">
+                <div class="card-icon3">🌐</div>
+                <div>
+                    <h3>Deep Learning for Dataset Correction</h3>
+                    <p class="period">2021 - 2022</p>
                 </div>
+            </div>
+            <p>Development of Deep Learning techniques to correct monitoring datasets of large-scale distributed networks and systems. Focus on correcting missing values obtained from partial measurements, essential for management, research, and innovation activities.</p>
+        </div>
 
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">🔗</div>
-                    <h4>Links</h4>
-                    <p><a href="http://lattes.cnpq.br/1764844070010969" target="_blank">Lattes CV</a><br>
+
+    </div>
+</section>
+
+<section id="skills" style="background: linear-gradient(180deg, white 0%, var(--light-card) 100%);">
+    <div class="container">
+        <h2 class="section-title fade-in active">Technical Skills</h2>
+
+        <div class="tech-skills-container">
+            <div class="tech-category fade-in active">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">💻</div>
+                    <h3>Linguagens</h3>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">C</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">Kotlin</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Shell">Shell</span>
+                </div>
+            </div>
+
+            <div class="tech-category fade-in active">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">🔧</div>
+                    <h3>Frameworks</h3>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">Keras</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://huggingface.co/favicon.ico" alt="Transformers">Transformers</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://python.langchain.com/img/brand/wordmark.png" alt="LangChain" style="height: 20px; width: auto;">LangChain</span>
+                </div>
+            </div>
+
+            <div class="tech-category fade-in active">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">📚</div>
+                    <h3>Bibliotecas</h3>
+                </div>
+                <div class="tech-items">
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">Scikit-learn</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">Matplotlib</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://scipy.org/images/logo.svg" alt="SciPy" style="height: 24px; width: auto;">SciPy</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">NumPy</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nvidia_CUDA_Logo.jpg" alt="CUDA">CUDA</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://raw.githubusercontent.com/google/jax/main/images/jax_logo_250px.png" alt="JAX" style="height: 20px; width: auto;">JAX</span>
+                    <span class="tech-tag"><img class="tech-icon" src="https://gymnasium.farama.org/_static/img/gymnasium_black.svg" alt="Gymnasium" style="height: 22px; width: auto;">Gymnasium</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="publications">
+    <div class="container">
+        <h2 class="section-title fade-in active">Scientific Production</h2>
+
+        <h3 class="section-title fade-in active" style="font-size: 40px; margin-bottom: 50px;">Journal Articles</h3>
+
+        <div class="publication-item fade-in active">
+            <h4>Regenerating Networked Systems' Monitoring Traces Using Neural Networks</h4>
+            <p class="authors">PAIM, KAYUÃ OLEQUES; QUINCOZES, VAGNER ERENO; KREUTZ, DIEGO; MANSILHA, RODRIGO BRANDÃO; CORDEIRO, WEVERTON</p>
+            <p class="venue">Journal of Network and Systems Management, v. 32, p. 16, 2024 | Citações: 1</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Acoustic identification of Ae. aegypti mosquitoes using smartphone apps and residual convolutional neural networks</h4>
+            <p class="authors">PAIM, K. O.; ROHWEDER, RICARDO; RECAMONDE-MENDOZA, MARIANA; MANSILHA, R.; CORDEIRO, WEVERTON</p>
+            <p class="venue">Biomedical Signal Processing and Control, v. 95, p. 106342, 2024 | Citações: 2</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Revisiting the coupon collector's problem to unveil users' online sessions in networked systems</h4>
+            <p class="authors">CORDEIRO, WEVERTON; GASPARY, LUCIANO; BELTRAN, RAFAEL; PAIM, KAYUÃ; MANSILHA, RODRIGO</p>
+            <p class="venue">Peer-to-Peer Networking and Applications, v. 1, p. 1, 2020 | Citações: 2</p>
+        </div>
+
+        <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px; margin-bottom: 50px;">Conference Papers</h3>
+
+        <div class="publication-item fade-in active">
+            <h4>Acoustic Identification of Aedes aegypti: Experimental Assessment of Different Machine Learning Techniques</h4>
+            <p class="authors">PAIM, K. O.; SILVA, T. M. D.; DILLY, J.; TAVARES, A. R.; CUNHA, M. P.; SILVA, O. S.; RECAMONDE-MENDOZA, M.; MANSILHA, R.; CORDEIRO, W.</p>
+            <p class="venue">SEMISH 2025 - Seminário Integrado de Software e de Hardware, Maceió-AL</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Exploiting Latent Space Discontinuities for Building Universal Jailbreaks and Data Extraction Attacks: A New Approach</h4>
+            <p class="authors">PAIM, K. O.; KREUTZ, D. L; FRANCO, M. F.; MANSILHA, RODRIGO; CORDEIRO, W.</p>
+            <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Além da Similaridade: Uma Super-Métrica Generalizável para Avaliação de Fidelidade em Dados Sintéticos de Malware</h4>
+            <p class="authors">GOMES, A. L.; DINIZ, A. G.; KREUTZ, DIEGO; PAIM, K. O.; MANSILHA, RODRIGO; FONSECA, C. N.</p>
+            <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - SBSeg 2025, Foz do Iguaçu - PR</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>MalDataGen: A Modular Framework for Synthetic Tabular Data Generation in Malware Detection</h4>
+            <p class="authors">PAIM, K. O.; DINIZ, A. G.; KREUTZ, D. L; CORDEIRO, W.; BRANDAO, R.</p>
+            <p class="venue">XXV Simpósio Brasileiro de Cibersegurança - Salão de Ferramentas, Foz do Iguaçu - PR</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Geração de dados sintéticos tabulares para detecção de malware Android: um estudo de caso</h4>
+            <p class="authors">DINIZ, A. G.; PAIM, KAYUÃ OLEQUES; BRANGANCA, H.; BRANDAO, R.; KREUTZ, D. L</p>
+            <p class="venue">XXIV Simpósio Brasileiro de Segurança da Informação e de Sistemas Computacionais, São José dos Campos, 2024</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>MosqMon: um sistema distribuído para captura de faixas de áudio para treinamento de RNAs detectoras de mosquito Ae. aegypti</h4>
+            <p class="authors">RODRIGUES, Y. F.; RODRIGUES, R. N.; PAIM, K. O.; Kreutz, Diego; CORDEIRO, W.; BRANDAO, R.</p>
+            <p class="venue">XXI Escola Regional de Redes de Computadores (ERRC), Porto Alegre, 2024</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>DroidAugmentor: uma ferramenta de treinamento e avaliação de cGANs para geração de dados sintéticos</h4>
+            <p class="authors">FERNANDES, K. C.; PAIM, K. O.; BRANDAO, R.; KREUTZ, D. L</p>
+            <p class="venue">Salão de Ferramentas do SBSeg 2023, Juiz de Fora</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>AutoDroid: disponibilizando a ferramenta DroidAugmentor como serviço</h4>
+            <p class="authors">LAVIOLA, L. F.; PAIM, K. O.; KREUTZ, D. L; BRANDAO, R.</p>
+            <p class="venue">7º Workshop Regional de Segurança da Informação e de Sistemas Computacionais, Porto Alegre, 2023</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Fix Me If You Can: Using Neural Networks to Regenerate Networked Systems' Monitoring Traces</h4>
+            <p class="authors">PAIM, KAYUA O.; QUINCOZES, VAGNER E.; KREUTZ, DIEGO; MANSILHA, RODRIGO B.; CORDEIRO, WEVERTON</p>
+            <p class="venue">NOMS 2022 - IEEE/IFIP Network Operations and Management Symposium, Budapest</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Orquestrando Avaliações Experimentais com ICN-Stage</h4>
+            <p class="authors">BELTRAN, R. D.; PAIM, KAYUÃ; KREUTZ, D. L; BRANDAO, R.; CORDEIRO, WEVERTON</p>
+            <p class="venue">XIII Workshop de Pesquisa Experimental da Internet do Futuro (WPEIF 2022), Fortaleza, CE</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>FWNL: Um Sistema de Processamento de Linguagem Natural para Configuração de Múltiplos Firewalls</h4>
+            <p class="authors">GOULART, J. A. S.; FAGUNDES JUNIOR, W. L. M.; PAIM, KAYUA O.; LUNARDI, G. M.; KREUTZ, D. L; MANSILHA, RODRIGO</p>
+            <p class="venue">VI Salão de Ferramentas - SBSeg 2022, Santa Maria</p>
+        </div>
+
+        <div class="publication-item fade-in active">
+            <h4>Usando Redes Neurais para Reconstruir Traços de Sessões de Usuários de Sistemas de Larga Escala</h4>
+            <p class="authors">PAIM, K. O.; BELTRAN, R. D.; BRANDAO, R.; CORDEIRO, WEVERTON</p>
+            <p class="venue">XXXIX Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC), Uberlândia/MG, 2021</p>
+        </div>
+
+
+        <h3 class="section-title fade-in active" style="font-size: 40px; margin-top: 100px;">Innovation & Patents</h3>
+
+        <div class="cards-grid">
+            <div class="card fade-in">
+                <div class="card-icon2">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
+                </div>
+                <h3>DroidAugmentor</h3>
+                <p class="period">Registration: BR512025000550-4 (2024)</p>
+                <p>Training and Evaluation Tool for cGANs for Synthetic Data Generation for Android Malware Detection</p>
+            </div>
+
+            <div class="card fade-in">
+                <div class="card-icon2">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                </div>
+                <h3>Aedes Detector Lab</h3>
+                <p class="period">Registration: 000359-2 (2024)</p>
+                <p>Application for identifying Aedes aegypti mosquitoes through sound for laboratory use</p>
+            </div>
+
+            <div class="card fade-in">
+                <div class="card-icon2">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>FWBot</h3>
+                <p class="period">Registration: BR512023001338-2 (2022)</p>
+                <p>ChatBot for Configuring Firewalls of Multiple Technologies</p>
+            </div>
+
+            <div class="card fade-in">
+                <div class="card-icon2">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <h3>ICN Stage</h3>
+                <p class="period">Registration: 003529-4 (2022)</p>
+                <p>Tool for orchestrating experimental evaluations of ICN</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title fade-in">Contact</h2>
+        <div class="contact-info">
+            <div class="contact-card fade-in">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <h4>Email</h4>
+                <p>kayua@inf.ufrgs.br</p>
+            </div>
+
+            <div class="contact-card fade-in">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h4>Phone</h4>
+                <p>(55) 99665-1328</p>
+            </div>
+
+            <div class="contact-card fade-in">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <h4>Location</h4>
+                <p>UFRGS - Campus do Vale<br>Porto Alegre, RS - Brazil</p>
+            </div>
+
+            <div class="contact-card fade-in">
+                <div class="contact-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </div>
+                <h4>Links</h4>
+                <p><a href="http://lattes.cnpq.br/1764844070010969" target="_blank">Lattes CV</a><br>
                     <a href="https://orcid.org/0000-0002-3394-795X" target="_blank">ORCID</a></p>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Kayuã Oleques Paim. Todos os direitos reservados.</p>
-            <p style="margin-top: 10px; color: var(--text-secondary); font-size: 14px;">Bolsista de Doutorado CNPq | UFRGS</p>
-        </div>
-    </footer>
 
-    <script>
-        // Navbar scroll effect with hide/show
-        let lastScrollTop = 0;
-        const navbar = document.getElementById('navbar');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Add/remove scrolled class
-            if (scrollTop > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+<footer>
+    <div class="container">
+        <p>© 2025 Kayuã Oleques Paim. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px; color: var(--text-secondary); font-size: 14px;">Bolsista de Doutorado CNPq | UFRGS</p>
+    </div>
+</footer>
+
+<script>
+    // Navbar scroll effect with hide/show
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Add/remove scrolled class
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Hide/show navbar based on scroll direction
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down & past 100px
+            navbar.classList.add('hidden');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-            
-            // Hide/show navbar based on scroll direction
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down & past 100px
-                navbar.classList.add('hidden');
-            } else {
-                // Scrolling up
-                navbar.classList.remove('hidden');
+        });
+    });
+
+    // Fade in on scroll animation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
             }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
+    }, observerOptions);
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in on scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
